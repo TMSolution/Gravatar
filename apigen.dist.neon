@@ -1,5 +1,5 @@
 source: "src"
-destination: "docs/API"
+destination: "docs/api"
 templateTheme: "bootstrap"
 download: on
 debug: on
