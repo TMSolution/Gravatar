@@ -9,7 +9,7 @@ namespace Gravatar;
 /**
  * Gravatar account
  *
- * @author Krzysztof Piasecki <krzysiekpiasecki@gmial.com>
+ * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Account
 {

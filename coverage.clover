@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1438896894">
-  <project timestamp="1438896894">
+<coverage generated="1438897644">
+  <project timestamp="1438897644">
     <package name="Gravatar">
       <file name="/Users/krzysztek/Documents/PhpStormProjects/Gravatar/src/Gravatar/Account.php">
         <class name="Account" namespace="Gravatar">
