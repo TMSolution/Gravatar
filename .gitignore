@@ -1,0 +1,8 @@
+vendor
+apigen.neon
+phpunit.xml
+nbproject
+*.lock
+.DS_Store
+.idea
+*~
