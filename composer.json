@@ -1,0 +1,22 @@
+{
+  "name": "krzysiekpiasecki/gravatar",
+  "description": "Request for a globally Recognized Avatar",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Krzysztof Piasecki",
+      "email": "krzysiekpiasecki@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "*",
+    "phpunit/phpunit-story": "*"
+  },
+  "autoload": {
+    "psr-4": {"Gravatar\\": "src/Gravatar"}
+  }
+}
