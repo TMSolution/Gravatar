@@ -18,4 +18,4 @@ script:
 - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 - rm -rf docs/api
 - vendor/bin/apigen generate --debug --config apigen.dist.neon
-- phploc src
+- vendor/bin/phploc src
