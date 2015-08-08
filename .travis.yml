@@ -9,6 +9,7 @@ sudo: false
 before_install:
   - composer self-update
   - wget https://scrutinizer-ci.com/ocular.phar
+  - curl -O https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
