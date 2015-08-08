@@ -9,7 +9,6 @@ sudo: false
 before_install:
   - composer self-update
   - wget https://scrutinizer-ci.com/ocular.phar
-  - curl -O https://github.com/ApiGen/ApiGen.github.io/raw/master/apigen.phar
 
 install:
   - travis_retry composer install --no-interaction --prefer-source
@@ -17,3 +16,4 @@ install:
 script:
 - phpunit --configuration phpunit.dist.xml
 - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+- vendor/bin/apigen generate --config apigen.dist.neon
