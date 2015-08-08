@@ -9,51 +9,51 @@ use ReflectionClass;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Unit test for {@see URI} class.
+ * Unit test for {@see Hash} class.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class UriTest extends PHPUnit_Framework_TestCase
+class HashTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Uri::__construct
+     * @covers Hash::__construct
      */
     public function test__construct()
     {
-        $uri = new Uri("http://1.gravatar.com/avatar/42ee56a548ee6259f9e44a66d1c3aa61");
-        $class = new ReflectionClass($uri);
-        $property = $class->getProperty("uri");
+        $account = new Account("krzysiekpiasecki@gmail.com");
+        $hash = new Hash($account);
+        $class = new ReflectionClass($hash);
+        $property = $class->getProperty("account");
         $property->setAccessible(true);
         $this->assertSame(
-            "http://1.gravatar.com/avatar/42ee56a548ee6259f9e44a66d1c3aa61",
-            $property->getValue($uri)
+            $account,
+            $property->getValue($hash)
         );
     }
 
     /**
-     * @covers Uri::__toString
+     * @covers Hash::__toString
      */
     public function test__toString()
     {
-        $uri = new Uri("http://1.gravatar.com/avatar/42ee56a548ee6259f9e44a66d1c3aa61");
+        $hash = new Hash(new Account("krzysiekpiasecki@gmail.com"));
         $this->assertSame(
-            "http://1.gravatar.com/avatar/42ee56a548ee6259f9e44a66d1c3aa61",
-            $uri->__toString()
+            "42ee56a548ee6259f9e44a66d1c3aa61",
+            $hash->__toString()
         );
     }
 
     /**
-     * @covers Uri::equals
+     * @covers Hash::equals
      */
     public function testEquals()            
     {
-        $uri = new Uri("http://1.gravatar.com/avatar/42ee56a548ee6259f9e44a66d1c3aa61");
-        $uri2 = clone $uri;
-        $uri3 = new Uri("http://2.gravatar.com/avatar/42ee56a548ee6259f9e44a66d1c3aa61");
-        $this->assertTrue($uri->equals($uri2));
-        $this->assertTrue($uri2->equals($uri));
-        $this->assertFalse($uri3->equals($uri2));
-        $this->assertFalse($uri2->equals($uri3));        
+        $hash = new Hash(new Account("krzysiekpiasecki@gmail.com"));
+        $hash2 = new Hash(new Account("krzysiekpiasecki@gmail.com"));
+        $hash3 = new Hash(new Account("krzysztofpiasecki@gmail.com"));
+        $this->assertTrue($hash->equals($hash2));
+        $this->assertTrue($hash2->equals($hash));
+        $this->assertFalse($hash3->equals($hash));
     }
 
 }
