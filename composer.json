@@ -14,7 +14,8 @@
   },
   "require-dev": {
     "phpunit/phpunit": "*",
-    "phpunit/phpunit-story": "*"
+    "phpunit/phpunit-story": "*",
+    "apigen/apigen": "*"    
   },
   "autoload": {
     "psr-4": {"Gravatar\\": "src/Gravatar"}
