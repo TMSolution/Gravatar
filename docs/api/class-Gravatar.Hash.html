@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Gravatar\Account</title>
+	<title>Class Gravatar\Hash</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?a2b5efb503881470385230f40f9bcc3c94d665e7">
@@ -63,8 +63,8 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li class="active"><a href="class-Gravatar.Account.html">Account</a></li>
-				<li><a href="class-Gravatar.Hash.html">Hash</a></li>
+				<li><a href="class-Gravatar.Account.html">Account</a></li>
+				<li class="active"><a href="class-Gravatar.Hash.html">Hash</a></li>
 				<li><a href="class-Gravatar.ProfileRequest.html">ProfileRequest</a></li>
 				<li><a href="class-Gravatar.Uri.html">Uri</a></li>
 				<li><a href="class-Gravatar.XmlProfileRequest.html">XmlProfileRequest</a></li>
@@ -83,11 +83,11 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class Account</h1>
+	<h1>Class Hash</h1>
 
 
 	<div class="description">
-	<p>Gravatar account</p>
+	<p>Gravatar hash for the account</p>
 	</div>
 
 
@@ -106,7 +106,7 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-Gravatar.Account.html#9-65" title="Go to source code">Gravatar/Account.php</a>
+			<b>Located at</b> <a href="source-class-Gravatar.Hash.html#9-55" title="Go to source code">Gravatar/Hash.php</a>
 		<br>
 	</div>
 
@@ -126,55 +126,22 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Gravatar.Account.html#24-32" title="Go to source code">__construct</a>( <span> <var>$email</var></span> )</code>
+			<code><a href="source-class-Gravatar.Hash.html#24-32" title="Go to source code">__construct</a>( <span><code><a href="class-Gravatar.Account.html">Gravatar\Account</a></code> <var>$account</var></span> )</code>
 
 			<div class="description short">
-				<p>New Gravatar account</p>
+				<p>New Gravatar hash for the account</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>New Gravatar account</p>
+				<p>New Gravatar hash for the account</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$email</var></dt>
-						<dd>email</dd>
+						<dt><var>$account</var></dt>
+						<dd>Gravatar account</dd>
 					</dl></div>
 
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getEmail" id="_getEmail">
-
-			<td class="attributes"><code>
-				 public 
-				string
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getEmail">#</a>
-			<code><a href="source-class-Gravatar.Account.html#34-42" title="Go to source code">getEmail</a>( )</code>
-
-			<div class="description short">
-				<p>Get account email</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Get account email</p>
-
-
-
-					<h4>Returns</h4>
-					<div class="list">
-						string<br>Account email
-					</div>
 
 
 
@@ -193,20 +160,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___toString">#</a>
-			<code><a href="source-class-Gravatar.Account.html#44-52" title="Go to source code">__toString</a>( )</code>
+			<code><a href="source-class-Gravatar.Hash.html#34-42" title="Go to source code">__toString</a>( )</code>
 
 			<div class="description short">
-				<p>Get account email</p>
+				<p>Get Gravatar hash</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get account email</p>
+				<p>Get Gravatar hash</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						string<br>Account email
+						string<br>Gravatar hash for the account
 					</div>
 
 
@@ -226,20 +193,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_equals">#</a>
-			<code><a href="source-class-Gravatar.Account.html#54-63" title="Go to source code">equals</a>( <span><code><a href="class-Gravatar.Account.html">Gravatar\Account</a></code> <var>$account</var></span> )</code>
+			<code><a href="source-class-Gravatar.Hash.html#44-53" title="Go to source code">equals</a>( <span><code><a href="class-Gravatar.Hash.html">Gravatar\Hash</a></code> <var>$hash</var></span> )</code>
 
 			<div class="description short">
-				<p>Ensure that two Accounts are equal</p>
+				<p>Ensure that two Hashes are equal</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Ensure that two Accounts are equal</p>
+				<p>Ensure that two Hashes are equal</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$account</var></dt>
-						<dd>Other account</dd>
+						<dt><var>$hash</var></dt>
+						<dd>Other hash</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
@@ -269,28 +236,28 @@
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
 			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="email" id="$email">
+		<tr data-order="account" id="$account">
 			<td class="attributes"><code>
 				protected  
-				string
+				<code><a href="class-Gravatar.Account.html">Gravatar\Account</a></code>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Gravatar.Account.html#17-22" title="Go to source code"><var>$email</var></a>
+					<a href="source-class-Gravatar.Hash.html#17-22" title="Go to source code"><var>$account</var></a>
 
 				<div class="description short">
-					<p>Account email</p>
+					<p>Gravatar account</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>Account email</p>
+					<p>Gravatar account</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$email" class="anchor">#</a>
-					<code><span class="php-quote">&quot;&quot;</span></code>
+					<a href="#$account" class="anchor">#</a>
+					<code><span class="php-keyword1">null</span></code>
 				</div>
 			</td>
 		</tr>
