@@ -11,22 +11,22 @@ namespace Gravatar;
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-abstract class AbstractProfileRequest
+abstract class AbstractProfileRequest implements RequestInterface
 {
     /**
      * Gravatar account
-     * 
+     *
      * @var Account Gravatar account
      */
     protected $account = null;
-    
+
     /**
      * Request scheme
-     * 
+     *
      * @var string  Request scheme (default https)
      */
     protected $scheme = "https";
-    
+
     /**
      * Gravatar profile format
      * 
@@ -45,10 +45,10 @@ abstract class AbstractProfileRequest
         $this->account = $account;
         $this->format = $format;
     }
-    
+
     /**
      * Get request URI
-     * 
+     *
      * @return string Request URI
      */
     public function __toString()
@@ -58,7 +58,7 @@ abstract class AbstractProfileRequest
 
     /**
      * New request for Gravatar profile with http protocol
-     * 
+     *
      * @return AbstractProfileRequest New request for Gravatar profile with http protocol
      */
     public function withHttp()
@@ -82,14 +82,14 @@ abstract class AbstractProfileRequest
             $type
         ));
     }
-    
+
     /**
      * Ensure both requests are equal.
-     * 
+     *
      * Requests are equal if they points to the same URI.
-     * 
+     *
      * @param AbstractProfileRequest $request Other request for Gravatar profile
-     * @return string Request for the profile
+     * @return string Request
      */
     public function equals(AbstractProfileRequest $request)
     {
