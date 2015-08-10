@@ -89,6 +89,7 @@ abstract class AbstractProfileRequest
      * Requests are equal if they points to the same URI.
      * 
      * @param AbstractProfileRequest $request Other request for Gravatar profile
+     * @return string Request for the profile
      */
     public function equals(AbstractProfileRequest $request)
     {
