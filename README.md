@@ -3,6 +3,8 @@
 Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized avatar
 
 ```php
+    namespace Gravatar;
+
     $response = new Response(
         new XmlProfileRequest(new
             Account('krzysiekpiasecki@gmail.com')
