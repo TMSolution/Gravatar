@@ -94,13 +94,12 @@ class AbstractRequest
      */
     public function getUri()
     {
-        $type = ($this->type != "") ? \sprintf(".%s", $this->type) : "";
         return new Uri(
             \sprintf("%s://%s/%s%s",
                 $this->scheme,
                 $this->host,
                 new Hash($this->account),
-                $type
+                ($this->type != "") ? \sprintf(".%s", $this->type) : ""
             )
         );
     }
@@ -111,7 +110,7 @@ class AbstractRequest
      * Requests are equal if they points to the same URI
      *
      * @param AbstractRequest $request Other request
-     * @return bool True if equal, otherwise false
+     * @return bool True if equal otherwise false
      */
     public function equals(AbstractRequest $request)
     {
