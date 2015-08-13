@@ -7,8 +7,9 @@
 namespace Gravatar;
 
 /**
- * Gravatar hash for the account
+ * Gravatar hash
  *
+ * @link http://en.gravatar.com/site/implement/hash Gravatar hash
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Hash
@@ -17,12 +18,12 @@ class Hash
     /**
      * Gravatar account
      * 
-     * @var Account 
+     * @var Account  Gravatar account
      */
     protected $account = null;
 
     /**
-     * New Gravatar hash for the account
+     * Gravatar hash
      * 
      * @param Account $account Gravatar account
      */
@@ -34,7 +35,7 @@ class Hash
     /**
      * Get Gravatar hash
      * 
-     * @return string Gravatar hash for the account
+     * @return string Gravatar hash
      */
     public function __toString()
     {
@@ -45,7 +46,7 @@ class Hash
      * Ensure that two Hashes are equal
      *
      * @param Hash $hash Other hash
-     * @return bool if equal return true otherwise false
+     * @return bool if equal true otherwise false
      */
     public function equals(Hash $hash)
     {
