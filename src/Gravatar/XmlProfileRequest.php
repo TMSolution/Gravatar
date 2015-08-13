@@ -7,14 +7,15 @@
 namespace Gravatar;
 
 /**
- * Gravatar request for xml profile
+ * Request to the gravatar.com for the xml profile data
  *
+ * @link http://en.gravatar.com/site/implement/profiles/xml/ Gravatar Xml Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class XmlProfileRequest extends AbstractProfileRequest
 {
     /**
-     * New Gravatar request for xml profile
+     * Request to the gravatar.com for the xml profile data
      * 
      * @param Account $account Gravatar account
      */
