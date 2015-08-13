@@ -7,8 +7,9 @@
 namespace Gravatar;
 
 /**
- * Gravatar request for json profile
+ * Request to the gravatar.com for the JSON profile data
  *
+ * @link http://en.gravatar.com/site/implement/profiles/json Gravatar JSON Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class JsonProfileRequest extends AbstractProfileRequest
@@ -19,8 +20,9 @@ class JsonProfileRequest extends AbstractProfileRequest
      * @var string Callback
      */
     protected $callback = "";
+
     /**
-     * New Gravatar request for json profile
+     * Request to the gravatar.com for the JSON profile data
      *
      * @param Account $account Gravatar account
      * @param string $callback Callback name
@@ -40,6 +42,18 @@ class JsonProfileRequest extends AbstractProfileRequest
         return new Uri(\sprintf("%s%s",
             parent::getUri(),
                 ($this->callback != "") ? \sprintf("?callback=%s", $this->callback) : "")
+        );
+    }
+
+    /**
+     * Get query part of request URI
+     *
+     * @return string Query part of URI
+     */
+    protected function getQuery()
+    {
+        return \sprintf("%s",
+            ($this->callback != "") ? \sprintf("?callback=%s", $this->callback) : ""
         );
     }
 }

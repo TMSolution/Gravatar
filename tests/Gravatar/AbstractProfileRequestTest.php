@@ -110,10 +110,10 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(
             $request->equals(new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'), "xml"))
         );
-        $request2 = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'));        
+        $request2 = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'));
         $this->assertTrue(
             $request2->equals(new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com')))
-        );         
+        );
     }
 
 }

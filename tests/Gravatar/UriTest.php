@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 class UriTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Uri::__construct
+     * @covers Gravatar\Uri::__construct
      */
     public function test__construct()
     {
@@ -31,7 +31,7 @@ class UriTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Uri::__toString
+     * @covers Gravatar\Uri::__toString
      */
     public function test__toString()
     {
@@ -43,7 +43,7 @@ class UriTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Uri::equals
+     * @covers Gravatar\Uri::equals
      */
     public function testEquals()            
     {

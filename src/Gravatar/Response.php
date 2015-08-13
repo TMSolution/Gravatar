@@ -41,6 +41,19 @@ class Response
     }
 
     /**
+     * Get new response for the request
+     *
+     * @param RequestInterface $request
+     * @return Response
+     */
+    public function withRequest(RequestInterface $request)
+    {
+        $newResponse = clone $this;
+        $newResponse->request = $request;
+        return $newResponse;
+    }
+
+    /**
      * Get Response URI
      *
      * @return Uri

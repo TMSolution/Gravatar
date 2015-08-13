@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 class HashTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Hash::__construct
+     * @covers Gravatar\Hash::__construct
      */
     public function test__construct()
     {
@@ -32,7 +32,7 @@ class HashTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Hash::__toString
+     * @covers Gravatar\Hash::__toString
      */
     public function test__toString()
     {
@@ -44,7 +44,7 @@ class HashTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Hash::equals
+     * @covers Gravatar\Hash::equals
      */
     public function testEquals()            
     {
