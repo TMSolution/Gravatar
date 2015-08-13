@@ -7,8 +7,9 @@
 namespace Gravatar;
 
 /**
- * Gravatar request for qr profile
+ * Request to the gravatar.com for the QR profile data
  *
+ * @link http://en.gravatar.com/site/implement/profiles/qr Gravatar QR Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class QrProfileRequest extends AbstractProfileRequest
@@ -18,24 +19,46 @@ class QrProfileRequest extends AbstractProfileRequest
      * 
      * @var int 
      */
-    protected $size = 80;
+    protected $size = null;
+
     /**
-     * New Gravatar request for qr profile
-     * 
+     * Request to the gravatar.com for the QR profile data
+     *
      * @param Account $account Gravatar account
+     * @param int|null $size Size of QR image
      */
-    public function __construct(Account $account, $size = 80)
+    public function __construct(Account $account, $size = null)
     {
         parent::__construct($account, "qr");
-        $this->size = $size;
+        if ($size != null) {
+            $this->size = $size;
+        }
     }
-    
+
     /**
-     * 
-     * @return \Gravatar\Uri Gravatar request for qr profile
+     * Get request URI
+     *
+     * @return Uri Request URI
      */
     public function getUri()
     {
-        return new Uri(\sprintf("%s?s=%d", parent::getUri(), $this->size));
+        return new Uri(
+            \sprintf("%s%s",
+                parent::getUri(),
+                $this->getQuery()
+            )
+        );
+    }
+
+    /**
+     * Get query part of request URI
+     *
+     * @return string Query part of the URI
+     */
+    protected function getQuery()
+    {
+        return \sprintf("%s",
+            ($this->size != null) ? \sprintf("?size=%d", $this->size) : ""
+        );
     }
 }
