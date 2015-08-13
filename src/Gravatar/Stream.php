@@ -8,7 +8,7 @@
 namespace Gravatar;
 
 /**
- * Stream represents gravatar response content
+ * Gravatar response content
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -17,7 +17,7 @@ class Stream
     /**
      * Gravatar stream
      *
-     * @var resource
+     * @var resource Gravatar stream
      */
     protected $stream = null;
 
@@ -32,9 +32,9 @@ class Stream
     }
 
     /**
-     * Get gravatar response content
+     * Get response content
      *
-     * @return string Whole response content
+     * @return string Response content
      */
     public function getContent()
     {

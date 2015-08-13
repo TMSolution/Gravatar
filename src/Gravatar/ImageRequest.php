@@ -7,40 +7,23 @@
 namespace Gravatar;
 
 /**
- * Represents request for gravatar
+ * Request to the gravatar.com for image
  */
-class ImageRequest implements RequestInterface
+class ImageRequest extends AbstractRequest
 {
-    protected $account = null;
+    protected $path = "avatar";
 
-    protected $parameters = [
-        'email' => '',
-        'protocol' => 'https',
-        'image-type' => '',
+    /**
+     * Query query
+     *
+     * @var array
+     */
+    protected $query = [
         'size' => '',
         'default-image' => '',
         'force-default' => false,
         'rating' => ''
     ];
-
-    public function __construct(Account $account)
-    {
-        $this->account = $account;
-    }
-
-    public function withHttp()
-    {
-        $imageRequest = clone $this;
-        $imageRequest->parameters['protocol'] = 'http';
-        return $imageRequest;
-    }
-
-    public function withHttps()
-    {
-        $imageRequest = clone $this;
-        $imageRequest->parameters['protocol'] = 'https';
-        return $imageRequest;
-    }
 
     public function withAccount(Account $account)
     {
@@ -52,83 +35,67 @@ class ImageRequest implements RequestInterface
     public function withJpg()
     {
         $imageRequest = clone $this;
-        $imageRequest->parameters['image-type'] = 'jpg';
+        $imageRequest->type = 'jpg';
         return $imageRequest;
     }
 
     public function withPng()
     {
         $imageRequest = clone $this;
-        $imageRequest->parameters['image-type'] = 'png';
+        $imageRequest->type = 'png';
         return $imageRequest;
     }
 
     public function withSize($size)
     {
         $imageRequest = clone $this;
-        $imageRequest->parameters['size'] = $size;
+        $imageRequest->query['size'] = $size;
         return $imageRequest;
     }
 
     public function withDefaultImage($url)
     {
         $imageRequest = clone $this;
-        $imageRequest->parameters['default-image'] = $url;
+        $imageRequest->query['default-image'] = $url;
         return $imageRequest;
     }
 
     public function withForceDefault()
     {
         $imageRequest = clone $this;
-        $imageRequest->parameters['force-default'] = true;
+        $imageRequest->query['force-default'] = true;
         return $imageRequest;
     }
 
     public function withRating($rating)
     {
         $imageRequest = clone $this;
-        $imageRequest->parameters['rating'] = $rating;
+        $imageRequest->query['rating'] = $rating;
         return $imageRequest;
     }
 
     public function getUri()
     {
-        $protocol = $this->parameters['protocol'];
-        $domain = $protocol == 'http' ? "www.gravatar.com" : "secure.gravatar.com";
-        $gravatarHash = new Hash($this->account);
-        $image = ($this->parameters['image-type'] === '') ? '' : \sprintf(".%s", $this->parameters['image-type']);
-
-        $attr = [];
-        if ($this->parameters['size']) {
-            $attr[] = \sprintf("size=%d", $this->parameters['size']);
-        }
-        if ($this->parameters['default-image']) {
-            $attr[] = \sprintf("default=%s", \rawurlencode($this->parameters['default-image']));
-        }
-        if ($this->parameters['force-default'] === true) {
-            $attr[] = "forcedefault=y";
-        }
-        if ($this->parameters['rating'] != '') {
-            $attr[] = \sprintf("rating=%s", $this->parameters['rating']);
-        }
-
-        $queryParameters = "";
-        if (\count($attr) > 0) {
-            $queryParameters = \sprintf("?%s", join("&", $attr));
-        }
-
-        return new Uri(sprintf("%s://%s/avatar/%s%s%s",
-            $protocol,
-            $domain,
-            $gravatarHash,
-            $image,
-            $queryParameters
+        return new Uri(sprintf("%s%s%s",
+            parent::getUri(),
+            $this->path,
+            $this->getQuery()
         ));
     }
 
     public function __toString()
     {
         return $this->getUri()->__toString();
+    }
+
+    public function getQuery()
+    {
+        $query = [];
+        foreach ($this->query as $param => $value) {
+            $query[] = \sprintf("%s=%s", $param, $value);
+        }
+        $queryString = \join($query, "&");
+        return ($queryString != "") ? \sprintf("?%s", $queryString) : "";
     }
 
 }

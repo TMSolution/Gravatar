@@ -16,24 +16,24 @@ class Response
     /**
      * Request to gravatar.com
      *
-     * @var RequestInterface Request to gravatar.com
+     * @var AbstractRequest Request to gravatar.com
      */
     protected $request = null;
 
     /**
      * Response from gravatar.com
      *
-     * @param RequestInterface $request Request to gravatar.com
+     * @param AbstractRequest $request Request to gravatar.com
      */
-    public function __construct(RequestInterface $request)
+    public function __construct(AbstractRequest $request)
     {
         $this->request = $request;
     }
 
     /**
-     * Get whole response from gravatar.com
+     * Get response data from gravatar.com
      *
-     * @return string Response from gravatar.com
+     * @return string Response data from gravatar.com
      */
     public function __toString()
     {
@@ -43,24 +43,14 @@ class Response
     /**
      * Get new response for the request
      *
-     * @param RequestInterface $request
-     * @return Response
+     * @param AbstractRequest $request Request to gravatar.com
+     * @return Response New response for the request
      */
-    public function withRequest(RequestInterface $request)
+    public function withRequest(AbstractRequest $request)
     {
         $newResponse = clone $this;
         $newResponse->request = $request;
         return $newResponse;
-    }
-
-    /**
-     * Get Response URI
-     *
-     * @return Uri
-     */
-    public function getUri()
-    {
-        return $this->request->getUri();
     }
 
     /**
