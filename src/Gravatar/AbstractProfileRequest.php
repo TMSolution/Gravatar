@@ -28,17 +28,17 @@ abstract class AbstractProfileRequest implements RequestInterface
     protected $scheme = "https";
 
     /**
-     * Gravatar profile format
+     * Gravatar profile type
      * 
-     * @var string Gravatar profile format (default php)
+     * @var string Gravatar profile type (default php)
      */
     protected $format = "";
     
     /**
-     * New request for Gravatar profile in some format
+     * New request for Gravatar profile in some type
      * 
      * @param Account $account Gravatar profile
-     * @param string $format Profile format
+     * @param string $format Profile type
      */
     public function __construct(Account $account, $format = "php")
     {

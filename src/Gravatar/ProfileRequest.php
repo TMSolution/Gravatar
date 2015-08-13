@@ -7,15 +7,16 @@
 namespace Gravatar;
 
 /**
- * Gravatar request for php array profile
+ * Request to the gravatar.com for the php profile data
  *
+ * @link http://en.gravatar.com/site/implement/profiles/php/ Gravatar PHP Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class ProfileRequest extends AbstractProfileRequest
+class ProfileRequest extends AbstractRequest
 {
     /**
-     * New Gravatar request for php array profile
-     * 
+     * Request to the gravatar.com for the php profile data
+     *
      * @param Account $account Gravatar account
      */
     public function __construct(Account $account)
