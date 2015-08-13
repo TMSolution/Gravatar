@@ -9,6 +9,7 @@ namespace Gravatar;
 /**
  * Gravatar account
  *
+ * @link http://en.gravatar.com/support/what-is-gravatar About Gravatar
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Account
@@ -22,7 +23,7 @@ class Account
     protected $email = "";
 
     /**
-     * New Gravatar account
+     * Gravatar account
      *
      * @param $email Account email
      */
