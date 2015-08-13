@@ -30,9 +30,7 @@ class QrProfileRequest extends AbstractProfileRequest
     public function __construct(Account $account, $size = null)
     {
         parent::__construct($account, "qr");
-        if ($size != null) {
-            $this->size = $size;
-        }
+        $this->size = $size;
     }
 
     /**
