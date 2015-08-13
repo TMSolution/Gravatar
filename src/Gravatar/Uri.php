@@ -18,10 +18,10 @@ class Uri
      * 
      * @var string Gravatar URI
      */
-    protected $uri;
+    protected $uri = "";
 
     /**
-     * New Gravatar URI
+     * Gravatar URI
      * 
      * @param string $uri Gravatar URI
      */
@@ -33,7 +33,7 @@ class Uri
     /**
      * Get Gravatar URI
      * 
-     * @return string Uri Gravatar URI
+     * @return string Gravatar URI
      */
     public function __toString()
     {
@@ -44,7 +44,7 @@ class Uri
      * Ensure that both URI's are equal
      * 
      * @param Uri $uri Other Gravatar URI
-     * @return bool True if equal else false
+     * @return bool True if equal otherwise false
      */
     public function equals(Uri $uri)
     {
