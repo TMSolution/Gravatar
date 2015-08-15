@@ -12,7 +12,7 @@ namespace Gravatar;
  * @link http://en.gravatar.com/site/implement/profiles/qr Gravatar QR Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class QrProfileRequest extends AbstractProfileRequest
+class QrProfileRequest extends AbstractRequest
 {
     /**
      * Size of QR image
@@ -30,33 +30,17 @@ class QrProfileRequest extends AbstractProfileRequest
     public function __construct(Account $account, $size = null)
     {
         parent::__construct($account, "qr");
-        $this->size = $size;
+        $this->query['size'] = $size;
     }
-
+    
     /**
-     * Get request URI
-     *
-     * @return Uri Request URI
+     * Get size of QR image
+     * 
+     * @return int Size of QR image
      */
-    public function getUri()
+    public function getSize()
     {
-        return new Uri(
-            \sprintf("%s%s",
-                parent::getUri(),
-                $this->getQuery()
-            )
-        );
+        return $this->query['size'];
     }
-
-    /**
-     * Get query part of request URI
-     *
-     * @return string Query part of the URI
-     */
-    protected function getQuery()
-    {
-        return \sprintf("%s",
-            ($this->size != null) ? \sprintf("?size=%d", $this->size) : ""
-        );
-    }
+    
 }

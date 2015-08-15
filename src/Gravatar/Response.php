@@ -35,7 +35,7 @@ class Response
      */
     public function __construct(AbstractRequest $request)
     {
-        $this->body = file_get_contents($request->getUri());
+        $this->body = \file_get_contents($request->getUri());
         $this->headers = $http_response_header;
     }
 

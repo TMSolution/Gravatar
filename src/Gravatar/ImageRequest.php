@@ -11,12 +11,10 @@ namespace Gravatar;
  */
 class ImageRequest extends AbstractRequest
 {
-    protected $path = "avatar";
-
     /**
-     * Query query
+     * Query paramaters
      *
-     * @var array
+     * @var array Query parameters
      */
     protected $query = [
         'size' => '',
@@ -25,6 +23,46 @@ class ImageRequest extends AbstractRequest
         'rating' => ''
     ];
 
+    /**
+     * Get request URI
+     * 
+     * @return string Request URI
+     */
+    public function __toString()
+    {
+        return $this->getUri()->__toString();
+    }
+
+    /**
+     * Get path of request URI
+     * 
+     * @return string Path of request URI
+     */
+    public function getPath()
+    {
+        return "avatar/" . parent::getPath();
+    }
+
+    /**
+     * Get size of the Gravatar image
+     * 
+     * @return int Size of the Gravatar image
+     */
+    public function getSize()
+    {
+        return $this->query['size'];
+    }
+    
+    public function getForceDefault()
+    {
+        return $this->query['force-default'];
+    }
+    
+    public function getRating()
+    {
+        return $this->query['rating'];
+    }
+    
     public function withAccount(Account $account)
     {
         $imageRequest = clone $this;
@@ -66,36 +104,12 @@ class ImageRequest extends AbstractRequest
         $imageRequest->query['force-default'] = true;
         return $imageRequest;
     }
-
+    
     public function withRating($rating)
     {
         $imageRequest = clone $this;
         $imageRequest->query['rating'] = $rating;
         return $imageRequest;
     }
-
-    public function getUri()
-    {
-        return new Uri(sprintf("%s%s%s",
-            parent::getUri(),
-            $this->path,
-            $this->getQuery()
-        ));
-    }
-
-    public function __toString()
-    {
-        return $this->getUri()->__toString();
-    }
-
-    public function getQuery()
-    {
-        $query = [];
-        foreach ($this->query as $param => $value) {
-            $query[] = \sprintf("%s=%s", $param, $value);
-        }
-        $queryString = \join($query, "&");
-        return ($queryString != "") ? \sprintf("?%s", $queryString) : "";
-    }
-
+    
 }
