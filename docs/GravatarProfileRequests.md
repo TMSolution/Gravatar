@@ -1,11 +1,13 @@
 #Request for profile data
 
+Requesting for profile data is a similar process to requesting images. You can request for data diffrent formats, but implementation is always the same.
 
-### Serialized array profile data
+### Request for profile data as a serialized PHP string
+
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new ProfileRequest(
             new Account('krzysiekpiasecki@gmail.com)
         )
@@ -13,33 +15,33 @@
 ```
 
 
-### XML profile data
+### Request for XML profile data
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new XmlProfileRequest(
             new Account('krzysiekpiasecki@gmail.com)
         )
     );
 ```
 
-### VCF profile data
+### Request for VCF profile data
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new VcfProfileRequest(
             new Account('krzysiekpiasecki@gmail.com)
         )
     );
 ```
 
-### QR profile data
+### Request for QR profile data
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new QrProfileRequest(
             new Account('krzysiekpiasecki@gmail.com)
         )
@@ -47,18 +49,19 @@
 ```
 
 ```php
-    $response = new Response(
+    $profileData = (string) new Response(
         new QrProfileRequest(
             new Account('krzysiekpiasecki@gmail.com)
         ), 250
     );
 ```
 
-### JSON profile data
+### Request for JSON profile data
+
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new JsonProfileRequest(
             new Account('krzysiekpiasecki@gmail.com)
         )
@@ -71,6 +74,4 @@
             new Account('krzysiekpiasecki@gmail.com)
         ), "showProfile"
     );
-```
-    
 ```
