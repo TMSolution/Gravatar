@@ -9,7 +9,7 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
 - Avoiding static methods, properties, utils, consts, null references
 
 ## Resources
-- [Examples](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/Index.md)
+- [Examples](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/Examples.md)
 - [Application programming interface](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/api/API-documentation.zip)
 - [UML Class Diagram](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/ClassDiagram.md)
 - [Software metrics](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/SoftwareMetrics.md)
