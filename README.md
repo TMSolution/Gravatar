@@ -12,6 +12,8 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
       )
     );
 ```
+[Read more about Gravatar image requests](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/GravatarImageRequests.md)
+
 
 ## Gravatar profile requests
 ```php
@@ -21,6 +23,7 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
         )
     );
 ```
+[Read more about Gravatar profile requests](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/GravatarProfileRequests.md)
 
 ## Class design
 
