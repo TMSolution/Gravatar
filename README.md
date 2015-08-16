@@ -12,12 +12,11 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
       )
     );
     
-    $response = new Response(
+    $profile = (string) new Response(
         new ProfileRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
-
 ```
 
 ## Resources
