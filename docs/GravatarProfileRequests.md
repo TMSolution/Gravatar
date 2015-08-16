@@ -1,6 +1,6 @@
 #Request for profile data
 
-Requesting for profile data is a similar process to requesting images. You can request for data in diffrent formats, but implementation is always the same.
+Requesting for profile data is a similar process to requesting images. You can request for profile data in diffrent formats, but implementation is always the same - composition of the requested response.
 
 ### Request for profile data as a serialized PHP string
 
@@ -13,7 +13,6 @@ Requesting for profile data is a similar process to requesting images. You can r
         )
     );
 ```
-
 
 ### Request for XML profile data
 ```php
@@ -47,7 +46,7 @@ Requesting for profile data is a similar process to requesting images. You can r
         )
     );
 ```
-
+Optionally you can request for QR image with specified size
 ```php
     $profileData = (string) new Response(
         new QrProfileRequest(
@@ -67,11 +66,13 @@ Requesting for profile data is a similar process to requesting images. You can r
         )
     );
 ```
-
+Optionally you can request for JSONP with specified callback
 ```php
-    $profileData = (new Response(
+    $profileData = (string) new Response(
         new JsonProfileRequest(
             new Account('krzysiekpiasecki@gmail.com)
         ), "showProfile"
-    ))->getBody();
+    );
 ```
+
+**[Visit gravatar.com for more details about profile data requests](http://en.gravatar.com/site/implement/profiles/)**.
