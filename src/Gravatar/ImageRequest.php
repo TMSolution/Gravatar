@@ -42,27 +42,13 @@ class ImageRequest extends AbstractRequest
     {
         return "avatar/" . parent::getPath();
     }
-
+    
     /**
-     * Get size of the Gravatar image
+     * Get new ImageRequest for the accout
      * 
-     * @return int Size of the Gravatar image
-     */
-    public function getSize()
-    {
-        return $this->query['size'];
-    }
-    
-    public function getForceDefault()
-    {
-        return $this->query['force-default'];
-    }
-    
-    public function getRating()
-    {
-        return $this->query['rating'];
-    }
-    
+     * @param Account Account
+     * @return ImageRequest ImageRequest for the account
+     */        
     public function withAccount(Account $account)
     {
         $imageRequest = clone $this;
@@ -70,6 +56,11 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with jpg extension
+     * 
+     * @return ImageRequest ImageRequest with default image url
+     */        
     public function withJpg()
     {
         $imageRequest = clone $this;
@@ -77,6 +68,11 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with png extension
+     * 
+     * @return ImageRequest ImageRequest with default image url
+     */        
     public function withPng()
     {
         $imageRequest = clone $this;
@@ -84,6 +80,12 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with image size
+     * 
+     * @param string $size Image size
+     * @return ImageRequest ImageRequest with image size
+     */    
     public function withSize($size)
     {
         $imageRequest = clone $this;
@@ -91,6 +93,12 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with default image url
+     * 
+     * @param string $url Image url
+     * @return ImageRequest ImageRequest with default image url
+     */    
     public function withDefaultImage($url)
     {
         $imageRequest = clone $this;
@@ -98,6 +106,11 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with force default option
+     * 
+     * @return ImageRequest ImageRequest with rating
+     */    
     public function withForceDefault()
     {
         $imageRequest = clone $this;
@@ -105,6 +118,12 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
     
+    /**
+     * Get new ImageRequest with rating
+     * 
+     * @param string $rating Image rating
+     * @return ImageRequest ImageRequest with rating
+     */
     public function withRating($rating)
     {
         $imageRequest = clone $this;

@@ -82,16 +82,6 @@ class AbstractRequest
     {
         return $this->getUri()->equals($request->getUri());
     }
-    
-    /**
-     * Get Gravatar account
-     * 
-     * @return Account Gravatar Account
-     */
-    public function getAccount()
-    {
-        return $this->account;
-    }
 
     /**
      * Get request URI
@@ -129,10 +119,7 @@ class AbstractRequest
     public function getQuery()
     {
         $query = [];
-        foreach ($this->query as $param => $value) {
-            if ($value == "") {
-                continue;
-            }
+        foreach (\array_filter($this->query) as $param => $value) {
             $query[] = \sprintf("%s=%s", $param, $value);
         }
         return (\count($query) > 0) ? \sprintf("?%s", \join("&", $query)) : "";
