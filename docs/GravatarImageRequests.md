@@ -16,7 +16,7 @@ Gravatar images may be requested just like a normal image, using an IMG tag. To 
 
 ### Requests with the additional parameters
 
-In addition to base request you can also use additional parameters to modify your base request.
+In addition to base request you can also use additional parameters to modify your request.
 
 Here is an example of requesting image using https scheme with size and rating parameters. **[Visit gravatar.com for more details](http://en.gravatar.com/site/implement/images/)**.
 
@@ -49,7 +49,7 @@ You can request for a binary text data creating response for your request.
 
 ### Getting response body and headers
 
-Create response for your request and get the whole body and all headers.
+If you create response for your request, you can get the whole body and all response headers.
 
 ```php
     namespace Gravatar;
