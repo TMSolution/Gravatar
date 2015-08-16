@@ -27,14 +27,4 @@ class JsonProfileRequest extends AbstractRequest
         $this->query["callback"] = $callback;
     }
 
-    /**
-     * Get callback name
-     * 
-     * @return string Callback name
-     */
-    public function getCallback()
-    {
-        return $this->query["callback"];
-    }
-
 }

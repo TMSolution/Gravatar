@@ -33,21 +33,4 @@ class JsonProfileRequestTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    /**
-     * @covers Gravatar\JsonProfileRequest::getUri
-     */
-    public function testGetUri()
-    {
-        $request = new JsonProfileRequest(new Account("krzysiekpiasecki@gmail.com"));
-        $this->assertTrue(
-            (new Uri("https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.json"))
-                ->equals($request->getUri())
-        );
-        $request2 = new JsonProfileRequest(new Account("krzysiekpiasecki@gmail.com"), "alert");
-        $this->assertTrue(
-            (new Uri("https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.json?callback=alert"))
-                ->equals($request2->getUri())
-        );
-    }
-
 }
