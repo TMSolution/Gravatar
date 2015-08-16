@@ -63,10 +63,16 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
+				<li><a href="class-Gravatar.AbstractRequest.html">AbstractRequest</a></li>
 				<li><a href="class-Gravatar.Account.html">Account</a></li>
 				<li><a href="class-Gravatar.Hash.html">Hash</a></li>
+				<li><a href="class-Gravatar.ImageRequest.html">ImageRequest</a></li>
+				<li><a href="class-Gravatar.JsonProfileRequest.html">JsonProfileRequest</a></li>
 				<li class="active"><a href="class-Gravatar.ProfileRequest.html">ProfileRequest</a></li>
+				<li><a href="class-Gravatar.QrProfileRequest.html">QrProfileRequest</a></li>
+				<li><a href="class-Gravatar.Response.html">Response</a></li>
 				<li><a href="class-Gravatar.Uri.html">Uri</a></li>
+				<li><a href="class-Gravatar.VcfProfileRequest.html">VcfProfileRequest</a></li>
 				<li><a href="class-Gravatar.XmlProfileRequest.html">XmlProfileRequest</a></li>
 			</ul>
 
@@ -87,17 +93,25 @@
 
 
 	<div class="description">
-	<p>Gravatar request for the profile</p>
+	<p>Request to the gravatar.com for the php profile data</p>
 	</div>
 
+	<dl class="tree well">
+		<dd style="padding-left:0px">
+			<a href="class-Gravatar.AbstractRequest.html"><span>Gravatar\AbstractRequest</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>Gravatar\ProfileRequest</span></b>			
+			
+			
+		</dd>
+	</dl>
 
 
-	<div>
-		<h3>Direct known subclasses</h3>
-		<p class="elementList">
-			<code><a href="class-Gravatar.XmlProfileRequest.html">Gravatar\XmlProfileRequest</a></code>
-		</p>
-	</div>
 
 
 
@@ -105,14 +119,16 @@
 
 
 	<div class="alert alert-info">
-		<b>Abstract</b><br>
+		
 		
 		<b>Namespace:</b> <a href="namespace-Gravatar.html">Gravatar</a><br>
 		
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-Gravatar.ProfileRequest.html#9-49" title="Go to source code">Gravatar/ProfileRequest.php</a>
+				<b>Link:</b>
+				<a href="http://en.gravatar.com/site/implement/profiles/php">Gravatar PHP Profile Data</a><br>
+			<b>Located at</b> <a href="source-class-Gravatar.ProfileRequest.html#9-28" title="Go to source code">Gravatar/ProfileRequest.php</a>
 		<br>
 	</div>
 
@@ -132,107 +148,27 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Gravatar.ProfileRequest.html#20-24" title="Go to source code">__construct</a>( <span><code><a href="class-Gravatar.Account.html">Gravatar\Account</a></code> <var>$account</var></span>, <span> <var>$profileFormat</var> = <span class="php-quote">&quot;&quot;</span></span> )</code>
+			<code><a href="source-class-Gravatar.ProfileRequest.html#18-26" title="Go to source code">__construct</a>( <span><code><a href="class-Gravatar.Account.html">Gravatar\Account</a></code> <var>$account</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Request to the gravatar.com for the php profile data</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Request to the gravatar.com for the php profile data</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$account</var></dt>
+						<dd>Gravatar account</dd>
+					</dl></div>
 
 
 
 
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="__toString" id="___toString">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#___toString">#</a>
-			<code><a href="source-class-Gravatar.ProfileRequest.html#26-29" title="Go to source code">__toString</a>( )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="withHttp" id="_withHttp">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_withHttp">#</a>
-			<code><a href="source-class-Gravatar.ProfileRequest.html#32-37" title="Go to source code">withHttp</a>( )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="getUri" id="_getUri">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_getUri">#</a>
-			<code><a href="source-class-Gravatar.ProfileRequest.html#39-47" title="Go to source code">getUri</a>( )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
-
-
-
+					<h4>Overrides</h4>
+					<div class="list"><code><a href="class-Gravatar.AbstractRequest.html#___construct">Gravatar\AbstractRequest::__construct</a></code></div>
 
 			</div>
 			</div></td>
@@ -240,6 +176,21 @@
 			</table>
 		</div>
 
+		<div class="panel panel-default">
+	        <div class="panel-heading"><h3>Methods inherited from <a href="class-Gravatar.AbstractRequest.html#methods">Gravatar\AbstractRequest</a></h3></div>
+			<p class="elementList">
+				<code><a href="class-Gravatar.AbstractRequest.html#___toString">__toString()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_equals">equals()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_getHost">getHost()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_getPath">getPath()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_getQuery">getQuery()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_getScheme">getScheme()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_getType">getType()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_getUri">getUri()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_withHttp">withHttp()</a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#_withHttps">withHttps()</a></code>
+			</p>
+		</div>
 
 
 
@@ -252,85 +203,18 @@
 
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
-			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="account" id="$account">
-			<td class="attributes"><code>
-				protected  
-				
-			</code></td>
-
-			<td class="name">
-					<a href="source-class-Gravatar.ProfileRequest.html#16" title="Go to source code"><var>$account</var></a>
-
-				<div class="description short">
-					
-				</div>
-
-				<div class="description detailed hidden">
-					
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$account" class="anchor">#</a>
-					<code><span class="php-keyword1">null</span></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="scheme" id="$scheme">
-			<td class="attributes"><code>
-				protected  
-				string
-			</code></td>
-
-			<td class="name">
-					<a href="source-class-Gravatar.ProfileRequest.html#17" title="Go to source code"><var>$scheme</var></a>
-
-				<div class="description short">
-					
-				</div>
-
-				<div class="description detailed hidden">
-					
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$scheme" class="anchor">#</a>
-					<code><span class="php-quote">&quot;https&quot;</span></code>
-				</div>
-			</td>
-		</tr>
-		<tr data-order="profileFormat" id="$profileFormat">
-			<td class="attributes"><code>
-				protected  
-				string
-			</code></td>
-
-			<td class="name">
-					<a href="source-class-Gravatar.ProfileRequest.html#18" title="Go to source code"><var>$profileFormat</var></a>
-
-				<div class="description short">
-					
-				</div>
-
-				<div class="description detailed hidden">
-					
-
-				</div>
-			</td>
-			<td class="value">
-				<div>
-					<a href="#$profileFormat" class="anchor">#</a>
-					<code><span class="php-quote">&quot;&quot;</span></code>
-				</div>
-			</td>
-		</tr>
-			</table>
 		</div>
 
+		<div class="panel panel-default">
+            <div class="panel-heading"><h3>Properties inherited from <a href="class-Gravatar.AbstractRequest.html#properties">Gravatar\AbstractRequest</a></h3></div>
+			<p class="elementList">
+				<code><a href="class-Gravatar.AbstractRequest.html#$account"><var>$account</var></a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#$host"><var>$host</var></a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#$query"><var>$query</var></a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#$scheme"><var>$scheme</var></a></code>, 
+				<code><a href="class-Gravatar.AbstractRequest.html#$type"><var>$type</var></a></code>
+			</p>
+		</div>
 
 
 

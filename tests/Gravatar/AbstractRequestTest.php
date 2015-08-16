@@ -76,12 +76,12 @@ class AbstractRequestTest extends PHPUnit_Framework_TestCase
     {
         $request = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'), "xml");
         $this->assertTrue(
-            (new Uri("https://www.gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml"))
+            (new Uri("https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml"))
                 ->equals($request->getUri())
         );
         $request2 = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'));        
         $this->assertTrue(
-            (new Uri("https://www.gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.php"))
+            (new Uri("https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.php"))
                 ->equals($request2->getUri())
         );        
     }
@@ -94,7 +94,7 @@ class AbstractRequestTest extends PHPUnit_Framework_TestCase
         $request = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'), "xml");
         $newRequest = $request->withHttp();
         $this->assertSame(
-            "http://www.gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml",
+            "http://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml",
             $newRequest->__toString());
         $this->assertNotSame($request, $newRequest);
         $newRequest2 = $request->withHttp();
