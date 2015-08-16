@@ -33,19 +33,9 @@ class Account
     }
 
     /**
-     * Get account email
+     * Get email
      *
-     * @return string Account email
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * Get account email
-     *
-     * @return string Account email
+     * @return string Email
      */
     public function __toString()
     {
@@ -63,4 +53,14 @@ class Account
         return $this == $account;
     }
 
+    /**
+     * Get email
+     *
+     * @return string Email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+    
 }

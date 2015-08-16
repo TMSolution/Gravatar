@@ -9,7 +9,7 @@ namespace Gravatar;
 use ReflectionClass;
 
 /**
- * Unit test for {@see Account} class.
+ * Test for Account class.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
