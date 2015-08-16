@@ -60,7 +60,7 @@ If you create response for your request, you can get the whole body and all resp
       )
     );
     
-    $body = $response->getBody(); // (string) $response
+    $body = $response->getBody(); // eq. (string) $response
     $headers = $response->getHeaders();
 ```
   
