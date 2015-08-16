@@ -18,7 +18,7 @@ Gravatar images may be requested just like a normal image, using an IMG tag. To 
 
 In addition to base request you can also use additional parameters to modify your request.
 
-Here is an example of requesting image using https scheme with size and rating parameters. **[Visit gravatar.com for more details](http://en.gravatar.com/site/implement/images/)**.
+Here is an example of requesting image using https scheme with size and rating parameters. **[Visit gravatar.com for more details about request parameters](http://en.gravatar.com/site/implement/images/)**.
 
 
 ```php
