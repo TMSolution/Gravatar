@@ -14,6 +14,7 @@ namespace Gravatar;
  */
 class ProfileRequest extends AbstractRequest
 {
+
     /**
      * Request to the gravatar.com for the php profile data
      *
@@ -23,4 +24,5 @@ class ProfileRequest extends AbstractRequest
     {
         parent::__construct($account, "php");
     }
+
 }
