@@ -1,76 +1,80 @@
 #Request for profile data
 
+Requesting for profile data is a similar process to requesting images. You can request for profile data in diffrent formats, but implementation is always the same - composition of the requested response.
 
-### Serialized array profile data
+### Request for profile data as a serialized PHP string
+
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new ProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
 
-
-### XML profile data
+### Request for XML profile data
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new XmlProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
 
-### VCF profile data
+### Request for VCF profile data
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new VcfProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
 
-### QR profile data
+### Request for QR profile data
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new QrProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
+        )
+    );
+```
+Optionally you can request for QR image with specified size
+```php
+    $profileData = (string) new Response(
+        new QrProfileRequest(
+            new Account('krzysiekpiasecki@gmail.com'),
+            250
         )
     );
 ```
 
-```php
-    $response = new Response(
-        new QrProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
-        ), 250
-    );
-```
+### Request for JSON profile data
 
-### JSON profile data
 ```php
     namespace Gravatar;
     
-    $response = new Response(
+    $profileData = (string) new Response(
         new JsonProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
+        )
+    );
+```
+Optionally you can request for JSONP with specified callback
+```php
+    $profileData = (string) new Response(
+        new JsonProfileRequest(
+            new Account('krzysiekpiasecki@gmail.com'),
+            "showProfile"
         )
     );
 ```
 
-```php
-    $response = new Response(
-        new JsonProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
-        ), "showProfile"
-    );
-```
-    
-```
+**[Visit gravatar.com for more details about profile data requests](http://en.gravatar.com/site/implement/profiles/)**.
