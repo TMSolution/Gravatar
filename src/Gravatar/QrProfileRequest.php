@@ -14,12 +14,6 @@ namespace Gravatar;
  */
 class QrProfileRequest extends AbstractRequest
 {
-    /**
-     * Size of QR image
-     * 
-     * @var int 
-     */
-    protected $size = null;
 
     /**
      * Request to the gravatar.com for the QR profile data
@@ -32,7 +26,7 @@ class QrProfileRequest extends AbstractRequest
         parent::__construct($account, "qr");
         $this->query['size'] = $size;
     }
-    
+
     /**
      * Get size of QR image
      * 
@@ -42,5 +36,5 @@ class QrProfileRequest extends AbstractRequest
     {
         return $this->query['size'];
     }
-    
+
 }
