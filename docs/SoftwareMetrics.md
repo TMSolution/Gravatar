@@ -1,23 +1,32 @@
 # Software metrics 
 
 <pre>
-phploc 2.0.5 by Sebastian Bergmann.
+phploc 2.1.0 by Sebastian Bergmann.
 
 Size
   Lines of Code (LOC)                              709
-  Comment Lines of Code (CLOC)                     334 (47.11%)
-  Non-Comment Lines of Code (NCLOC)                375 (52.89%)
+  Comment Lines of Code (CLOC)                     367 (51.76%)
+  Non-Comment Lines of Code (NCLOC)                342 (48.24%)
   Logical Lines of Code (LLOC)                      85 (11.99%)
     Classes                                         74 (87.06%)
       Average Class Length                           6
+        Minimum Class Length                         1
+        Maximum Class Length                        24
       Average Method Length                          1
+        Minimum Method Length                        1
+        Maximum Method Length                        3
     Functions                                        0 (0.00%)
       Average Function Length                        0
     Not in classes or functions                     11 (12.94%)
 
-Complexity
-  Cyclomatic Complexity / LLOC                    0.04
-  Cyclomatic Complexity / Number of Methods       1.08
+Cyclomatic Complexity
+  Average Complexity per LLOC                     0.04
+  Average Complexity per Class                    1.27
+    Minimum Class Complexity                      1.00
+    Maximum Class Complexity                      4.00
+  Average Complexity per Method                   1.08
+    Minimum Method Complexity                     1.00
+    Maximum Method Complexity                     3.00
 
 Dependencies
   Global Accesses                                    0
