@@ -36,4 +36,5 @@ class JsonProfileRequest extends AbstractRequest
     {
         return $this->query["callback"];
     }
+
 }
