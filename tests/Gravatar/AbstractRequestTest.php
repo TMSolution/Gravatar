@@ -9,17 +9,17 @@ namespace Gravatar;
 use ReflectionClass;
 use PHPUnit_Framework_TestCase;
 
-class MockProfileRequest extends AbstractProfileRequest {}
+class MockProfileRequest extends AbstractRequest {}
 
 /**
- * Unit test for {@see AbstractProfileRequest} class.
+ * Test for AbstractRequest class
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
+class AbstractRequestTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Gravatar\AbstractProfileRequest::__construct
+     * @covers Gravatar\AbstractRequest::__construct
      */
     public function test__construct()
     {
@@ -53,7 +53,7 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Gravatar\AbstractProfileRequest::__toString
+     * @covers Gravatar\AbstractRequest::__toString
      */
     public function test__toString()
     {
@@ -70,7 +70,7 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Gravatar\AbstractProfileRequest::getUri
+     * @covers Gravatar\AbstractRequest::getUri
      */
     public function testGetUri()
     {
@@ -87,7 +87,7 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Gravatar\AbstractProfileRequest::withHttp
+     * @covers Gravatar\AbstractRequest::withHttp
      */
     public function testWithHttp()
     {
@@ -102,7 +102,7 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers Gravatar\AbstractProfileRequest::equals
+     * @covers Gravatar\AbstractRequest::equals
      */
     public function testEquals()
     {

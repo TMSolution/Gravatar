@@ -27,14 +27,4 @@ class QrProfileRequest extends AbstractRequest
         $this->query['size'] = $size;
     }
 
-    /**
-     * Get size of QR image
-     * 
-     * @return int Size of QR image
-     */
-    public function getSize()
-    {
-        return $this->query['size'];
-    }
-
 }
