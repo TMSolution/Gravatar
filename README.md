@@ -2,7 +2,7 @@
 
 Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized avatar and profile data
 
-## Example of usage
+## Gravatar image requests
 ```php
     namespace Gravatar;
 
@@ -11,13 +11,17 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
         new Account('krzysiekpiasecki@gmail.com')
       )
     );
-    
+```
+
+## Gravatar profile requests
+```php
     $profile = (string) new Response(
         new ProfileRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
+
 ## Class design
 __Fully immutable - declarative over imperative - avoiding static methods, properties, utils, consts, null references__
 
