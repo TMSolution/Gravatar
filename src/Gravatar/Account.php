@@ -62,5 +62,5 @@ class Account
     {
         return $this->email;
     }
-    
+
 }
