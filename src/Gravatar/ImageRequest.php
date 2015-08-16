@@ -76,9 +76,8 @@ class ImageRequest extends AbstractRequest
 
     public function getUri()
     {
-        return new Uri(sprintf("%s%s%s",
+        return new Uri(sprintf("%s%s",
             parent::getUri(),
-            $this->path,
             $this->getQuery()
         ));
     }

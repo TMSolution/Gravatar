@@ -41,6 +41,8 @@ class AbstractRequest
      */
     protected $scheme = "https";
 
+    protected $path = "";
+
     /**
      * Abstract request
      *
@@ -98,7 +100,7 @@ class AbstractRequest
             \sprintf("%s://%s/%s%s",
                 $this->scheme,
                 $this->host,
-                new Hash($this->account),
+                $this->getPath(),
                 ($this->type != "") ? \sprintf(".%s", $this->type) : ""
             )
         );
@@ -115,6 +117,14 @@ class AbstractRequest
     public function equals(AbstractRequest $request)
     {
         return $this->getUri()->equals($request->getUri());
+    }
+
+    protected function getPath()
+    {
+        return \sprintf("%s\\%s",
+            $this->path,
+            new Hash($this->account)
+        );
     }
 
 }
