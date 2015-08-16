@@ -14,6 +14,7 @@ namespace Gravatar;
  */
 class VcfProfileRequest extends AbstractRequest
 {
+
     /**
      * Request to the gravatar.com for the vcf profile data
      * 
@@ -23,4 +24,5 @@ class VcfProfileRequest extends AbstractRequest
     {
         parent::__construct($account, "vcf");
     }
+
 }
