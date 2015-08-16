@@ -1,19 +1,23 @@
 #Gravatar
 
-Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized avatar
+Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized avatar image and profile data
 
+## Example of usage
 ```php
     namespace Gravatar;
 
-    $response = new Response(
-        new XmlProfileRequest(new
-            Account('krzysiekpiasecki@gmail.com')
+    $avatar = \sprintf("<img src=\"%s\" />",
+      new ImageRequest(
+        new Account('krzysiekpiasecki@gmail.com')
+      )
+    );
+    
+    $profile = (string) new Response(
+        new ProfileRequest(
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
-## Examples
-- [Image request](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/ImageRequestExample.md)
-- [Profile request](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/ProfileRequestExample.md)
 
 ## Resources
 - [Application programming interface](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/api/API-documentation.zip)

@@ -11,12 +11,10 @@ namespace Gravatar;
  */
 class ImageRequest extends AbstractRequest
 {
-    protected $path = "avatar";
-
     /**
-     * Query query
+     * Query paramaters
      *
-     * @var array
+     * @var array Query parameters
      */
     protected $query = [
         'size' => '',
@@ -25,6 +23,32 @@ class ImageRequest extends AbstractRequest
         'rating' => ''
     ];
 
+    /**
+     * Get request URI
+     * 
+     * @return string Request URI
+     */
+    public function __toString()
+    {
+        return $this->getUri()->__toString();
+    }
+
+    /**
+     * Get path of request URI
+     * 
+     * @return string Path of request URI
+     */
+    public function getPath()
+    {
+        return "avatar/" . parent::getPath();
+    }
+    
+    /**
+     * Get new ImageRequest for the accout
+     * 
+     * @param Account Account
+     * @return ImageRequest ImageRequest for the account
+     */        
     public function withAccount(Account $account)
     {
         $imageRequest = clone $this;
@@ -32,6 +56,11 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with jpg extension
+     * 
+     * @return ImageRequest ImageRequest with default image url
+     */        
     public function withJpg()
     {
         $imageRequest = clone $this;
@@ -39,6 +68,11 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with png extension
+     * 
+     * @return ImageRequest ImageRequest with default image url
+     */        
     public function withPng()
     {
         $imageRequest = clone $this;
@@ -46,6 +80,12 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with image size
+     * 
+     * @param string $size Image size
+     * @return ImageRequest ImageRequest with image size
+     */    
     public function withSize($size)
     {
         $imageRequest = clone $this;
@@ -53,6 +93,12 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with default image url
+     * 
+     * @param string $url Image url
+     * @return ImageRequest ImageRequest with default image url
+     */    
     public function withDefaultImage($url)
     {
         $imageRequest = clone $this;
@@ -60,41 +106,29 @@ class ImageRequest extends AbstractRequest
         return $imageRequest;
     }
 
+    /**
+     * Get new ImageRequest with force default option
+     * 
+     * @return ImageRequest ImageRequest with rating
+     */    
     public function withForceDefault()
     {
         $imageRequest = clone $this;
         $imageRequest->query['force-default'] = true;
         return $imageRequest;
     }
-
+    
+    /**
+     * Get new ImageRequest with rating
+     * 
+     * @param string $rating Image rating
+     * @return ImageRequest ImageRequest with rating
+     */
     public function withRating($rating)
     {
         $imageRequest = clone $this;
         $imageRequest->query['rating'] = $rating;
         return $imageRequest;
     }
-
-    public function getUri()
-    {
-        return new Uri(sprintf("%s%s",
-            parent::getUri(),
-            $this->getQuery()
-        ));
-    }
-
-    public function __toString()
-    {
-        return $this->getUri()->__toString();
-    }
-
-    public function getQuery()
-    {
-        $query = [];
-        foreach ($this->query as $param => $value) {
-            $query[] = \sprintf("%s=%s", $param, $value);
-        }
-        $queryString = \join($query, "&");
-        return ($queryString != "") ? \sprintf("?%s", $queryString) : "";
-    }
-
+    
 }

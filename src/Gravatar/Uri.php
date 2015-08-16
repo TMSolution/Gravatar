@@ -3,10 +3,11 @@
  * For the full copyright and license information, please view the LICENSE file
  * that was distributed with this source code.
  */
+
 namespace Gravatar;
 
 /**
- * Gravatar URI
+ * URI
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -14,16 +15,16 @@ class Uri
 {
 
     /**
-     * Gravatar URI
+     * URI
      * 
-     * @var string Gravatar URI
+     * @var string URI
      */
     protected $uri = "";
 
     /**
-     * Gravatar URI
+     * URI
      * 
-     * @param string $uri Gravatar URI
+     * @param string $uri URI
      */
     public function __construct($uri)
     {
@@ -31,9 +32,9 @@ class Uri
     }
 
     /**
-     * Get Gravatar URI
+     * Get URI
      * 
-     * @return string Gravatar URI
+     * @return string URI
      */
     public function __toString()
     {
@@ -43,8 +44,8 @@ class Uri
     /**
      * Ensure that both URI's are equal
      * 
-     * @param Uri $uri Other Gravatar URI
-     * @return bool True if equal otherwise false
+     * @param Uri $uri Other URI
+     * @return bool if equal return true otherwise false
      */
     public function equals(Uri $uri)
     {

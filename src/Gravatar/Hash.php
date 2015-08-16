@@ -18,7 +18,7 @@ class Hash
     /**
      * Gravatar account
      * 
-     * @var Account  Gravatar account
+     * @var Account Gravatar account
      */
     protected $account = null;
 
@@ -33,9 +33,9 @@ class Hash
     }
 
     /**
-     * Get Gravatar hash
+     * Get hash
      * 
-     * @return string Gravatar hash
+     * @return string Hash
      */
     public function __toString()
     {
@@ -46,7 +46,7 @@ class Hash
      * Ensure that two Hashes are equal
      *
      * @param Hash $hash Other hash
-     * @return bool if equal true otherwise false
+     * @return bool if equal return true otherwise false
      */
     public function equals(Hash $hash)
     {

@@ -9,17 +9,17 @@ namespace Gravatar;
 use ReflectionClass;
 use PHPUnit_Framework_TestCase;
 
-class MockProfileRequest extends AbstractProfileRequest {}
+class MockProfileRequest extends AbstractRequest {}
 
 /**
- * Unit test for {@see AbstractProfileRequest} class.
+ * Test for AbstractRequest class
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
+class AbstractRequestTest extends PHPUnit_Framework_TestCase
 {
     /**
-     * @covers Gravatar\AbstractProfileRequest::__construct
+     * @covers Gravatar\AbstractRequest::__construct
      */
     public function test__construct()
     {
@@ -53,7 +53,7 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Gravatar\AbstractProfileRequest::__toString
+     * @covers Gravatar\AbstractRequest::__toString
      */
     public function test__toString()
     {
@@ -70,31 +70,31 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Gravatar\AbstractProfileRequest::getUri
+     * @covers Gravatar\AbstractRequest::getUri
      */
     public function testGetUri()
     {
         $request = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'), "xml");
         $this->assertTrue(
-            (new Uri("https://www.gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml"))
+            (new Uri("https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml"))
                 ->equals($request->getUri())
         );
         $request2 = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'));        
         $this->assertTrue(
-            (new Uri("https://www.gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.php"))
+            (new Uri("https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.php"))
                 ->equals($request2->getUri())
         );        
     }
 
     /**
-     * @covers Gravatar\AbstractProfileRequest::withHttp
+     * @covers Gravatar\AbstractRequest::withHttp
      */
     public function testWithHttp()
     {
         $request = new MockProfileRequest(new Account('krzysiekpiasecki@gmail.com'), "xml");
         $newRequest = $request->withHttp();
         $this->assertSame(
-            "http://www.gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml",
+            "http://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml",
             $newRequest->__toString());
         $this->assertNotSame($request, $newRequest);
         $newRequest2 = $request->withHttp();
@@ -102,7 +102,7 @@ class AbstractProfileRequestTest extends PHPUnit_Framework_TestCase
     }
     
     /**
-     * @covers Gravatar\AbstractProfileRequest::equals
+     * @covers Gravatar\AbstractRequest::equals
      */
     public function testEquals()
     {

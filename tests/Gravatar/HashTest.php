@@ -9,7 +9,7 @@ use ReflectionClass;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Unit test for {@see Hash} class.
+ * Test for Hash class.
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */

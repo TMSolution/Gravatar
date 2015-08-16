@@ -9,7 +9,7 @@ use ReflectionClass;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Unit test for {@see URI} class.
+ * Test for Uri class
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */

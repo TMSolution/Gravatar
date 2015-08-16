@@ -13,13 +13,21 @@ namespace Gravatar;
  */
 class Response
 {
-    /**
-     * Request to gravatar.com
-     *
-     * @var AbstractRequest Request to gravatar.com
-     */
-    protected $request = null;
 
+    /**
+     * Response headers
+     * 
+     * @var array Response headers
+     */
+    protected $headers = [];
+    
+    /**
+     * Whole response body
+     * 
+     * @var string Whole response body
+     */
+    protected $body = "";
+    
     /**
      * Response from gravatar.com
      *
@@ -27,7 +35,8 @@ class Response
      */
     public function __construct(AbstractRequest $request)
     {
-        $this->request = $request;
+        $this->body = \file_get_contents($request->getUri());
+        $this->headers = $http_response_header;
     }
 
     /**
@@ -37,30 +46,27 @@ class Response
      */
     public function __toString()
     {
-        return $this->getBody()->getContent();
+        return $this->body;
     }
 
     /**
-     * Get new response for the request
+     * Get whole body of response
      *
-     * @param AbstractRequest $request Request to gravatar.com
-     * @return Response New response for the request
-     */
-    public function withRequest(AbstractRequest $request)
-    {
-        $newResponse = clone $this;
-        $newResponse->request = $request;
-        return $newResponse;
-    }
-
-    /**
-     * Get gravatar stream
-     *
-     * @return Stream Gravatar stream
+     * @return string
      */
     public function getBody()
     {
-        return new Stream(\fopen($this->request->getUri(), "r"));
+        return $this->body;
+    }
+    
+    /**
+     * Get response headers
+     *
+     * @return headers
+     */
+    public function getHeaders()
+    {
+        return $this->headers;
     }
 
 }

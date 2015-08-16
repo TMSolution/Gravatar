@@ -41,8 +41,13 @@ class AbstractRequest
      */
     protected $scheme = "https";
 
-    protected $path = "";
-
+    /**
+     * Request query parameters
+     * 
+     * @var array Query parameters 
+     */
+    protected $query = [];
+    
     /**
      * Abstract request
      *
@@ -66,6 +71,91 @@ class AbstractRequest
     }
 
     /**
+     * Ensure both requests are equal
+     *
+     * Requests are equal if they points to the same URI
+     *
+     * @param AbstractRequest $request Other request
+     * @return bool True if equal otherwise false
+     */
+    public function equals(AbstractRequest $request)
+    {
+        return $this->getUri()->equals($request->getUri());
+    }
+
+    /**
+     * Get request URI
+     *
+     * @return Uri Request URI
+     */
+    public function getUri()
+    {
+        return new Uri(
+            \sprintf("%s://%s/%s%s%s",
+                $this->getScheme(),
+                $this->getHost(),
+                $this->getPath(),
+                ($this->getType() != "") ? \sprintf(".%s", $this->getType()) : "",
+                $this->getQuery()
+            )
+        );
+    }
+
+    /**
+     * Get request type
+     * 
+     * @return string Request type
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+    
+    /**
+     * Get request query
+     * 
+     * @return string Request query
+     */
+    public function getQuery()
+    {
+        $query = [];
+        foreach (\array_filter($this->query) as $param => $value) {
+            $query[] = \sprintf("%s=%s", $param, $value);
+        }
+        return (\count($query) > 0) ? \sprintf("?%s", \join("&", $query)) : "";
+    }
+
+    /**
+     * Get request path
+     * 
+     * @return string Request Path
+     */
+    public function getPath()
+    {
+        return (string) new Hash($this->account);
+    }
+    
+    /**
+     * Get request host
+     * 
+     * @return string Request host
+     */
+    public function getHost()
+    {
+        return $this->host;
+    }
+    
+    /**
+     * Get request scheme
+     * 
+     * @return string Request scheme
+     */
+    public function getScheme()
+    {
+        return $this->scheme;
+    }
+    
+    /**
      * Get new request with http scheme
      *
      * @return AbstractProfile New request with http scheme
@@ -88,43 +178,5 @@ class AbstractRequest
         $newRequest->scheme = "https";
         return $newRequest;
     }
-
-    /**
-     * Get request URI
-     *
-     * @return Uri Request URI
-     */
-    public function getUri()
-    {
-        return new Uri(
-            \sprintf("%s://%s/%s%s",
-                $this->scheme,
-                $this->host,
-                $this->getPath(),
-                ($this->type != "") ? \sprintf(".%s", $this->type) : ""
-            )
-        );
-    }
-
-    /**
-     * Ensure both requests are equal
-     *
-     * Requests are equal if they points to the same URI
-     *
-     * @param AbstractRequest $request Other request
-     * @return bool True if equal otherwise false
-     */
-    public function equals(AbstractRequest $request)
-    {
-        return $this->getUri()->equals($request->getUri());
-    }
-
-    protected function getPath()
-    {
-        return \sprintf("%s\\%s",
-            $this->path,
-            new Hash($this->account)
-        );
-    }
-
+    
 }

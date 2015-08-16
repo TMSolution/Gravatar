@@ -14,6 +14,7 @@ namespace Gravatar;
  */
 class XmlProfileRequest extends AbstractRequest
 {
+
     /**
      * Request to the gravatar.com for the xml profile data
      * 
@@ -23,4 +24,5 @@ class XmlProfileRequest extends AbstractRequest
     {
         parent::__construct($account, "xml");
     }
+
 }

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Gravatar\Uri</title>
+	<title>Class Gravatar\Response</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?a2b5efb503881470385230f40f9bcc3c94d665e7">
@@ -70,8 +70,8 @@
 				<li><a href="class-Gravatar.JsonProfileRequest.html">JsonProfileRequest</a></li>
 				<li><a href="class-Gravatar.ProfileRequest.html">ProfileRequest</a></li>
 				<li><a href="class-Gravatar.QrProfileRequest.html">QrProfileRequest</a></li>
-				<li><a href="class-Gravatar.Response.html">Response</a></li>
-				<li class="active"><a href="class-Gravatar.Uri.html">Uri</a></li>
+				<li class="active"><a href="class-Gravatar.Response.html">Response</a></li>
+				<li><a href="class-Gravatar.Uri.html">Uri</a></li>
 				<li><a href="class-Gravatar.VcfProfileRequest.html">VcfProfileRequest</a></li>
 				<li><a href="class-Gravatar.XmlProfileRequest.html">XmlProfileRequest</a></li>
 			</ul>
@@ -89,11 +89,11 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class Uri</h1>
+	<h1>Class Response</h1>
 
 
 	<div class="description">
-	<p>URI</p>
+	<p>Response from gravatar.com</p>
 	</div>
 
 
@@ -112,7 +112,7 @@
 
 				<b>Author:</b>
 				Krzysztof Piasecki <a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#111;&#58;&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#107;&#114;&#x7a;&#x79;&#x73;&#x69;&#x65;&#107;&#112;&#105;&#97;&#115;&#x65;&#x63;&#x6b;&#x69;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a><br>
-			<b>Located at</b> <a href="source-class-Gravatar.Uri.html#9-55" title="Go to source code">Gravatar/Uri.php</a>
+			<b>Located at</b> <a href="source-class-Gravatar.Response.html#9-72" title="Go to source code">Gravatar/Response.php</a>
 		<br>
 	</div>
 
@@ -132,20 +132,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-Gravatar.Uri.html#24-32" title="Go to source code">__construct</a>( <span>string <var>$uri</var></span> )</code>
+			<code><a href="source-class-Gravatar.Response.html#31-40" title="Go to source code">__construct</a>( <span><code><a href="class-Gravatar.AbstractRequest.html">Gravatar\AbstractRequest</a></code> <var>$request</var></span> )</code>
 
 			<div class="description short">
-				<p>URI</p>
+				<p>Response from gravatar.com</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>URI</p>
+				<p>Response from gravatar.com</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
-						<dt><var>$uri</var></dt>
-						<dd>URI</dd>
+						<dt><var>$request</var></dt>
+						<dd>Request to gravatar.com</dd>
 					</dl></div>
 
 
@@ -166,20 +166,20 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___toString">#</a>
-			<code><a href="source-class-Gravatar.Uri.html#34-42" title="Go to source code">__toString</a>( )</code>
+			<code><a href="source-class-Gravatar.Response.html#42-50" title="Go to source code">__toString</a>( )</code>
 
 			<div class="description short">
-				<p>Get URI</p>
+				<p>Get response data from gravatar.com</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Get URI</p>
+				<p>Get response data from gravatar.com</p>
 
 
 
 					<h4>Returns</h4>
 					<div class="list">
-						string<br>URI
+						string<br>Response data from gravatar.com
 					</div>
 
 
@@ -188,36 +188,64 @@
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="equals" id="_equals">
+		<tr data-order="getBody" id="_getBody">
 
 			<td class="attributes"><code>
 				 public 
-				boolean
+				string
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_equals">#</a>
-			<code><a href="source-class-Gravatar.Uri.html#44-53" title="Go to source code">equals</a>( <span><code><a href="class-Gravatar.Uri.html">Gravatar\Uri</a></code> <var>$uri</var></span> )</code>
+			<a class="anchor" href="#_getBody">#</a>
+			<code><a href="source-class-Gravatar.Response.html#52-60" title="Go to source code">getBody</a>( )</code>
 
 			<div class="description short">
-				<p>Ensure that both URI's are equal</p>
+				<p>Get whole body of response</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Ensure that both URI's are equal</p>
+				<p>Get whole body of response</p>
 
 
-					<h4>Parameters</h4>
-					<div class="list"><dl>
-						<dt><var>$uri</var></dt>
-						<dd>Other URI</dd>
-					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						boolean<br>if equal return true otherwise false
+						string
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getHeaders" id="_getHeaders">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-Gravatar.Response.html#$headers">Gravatar\Response::<var>$headers</var></a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getHeaders">#</a>
+			<code><a href="source-class-Gravatar.Response.html#62-70" title="Go to source code">getHeaders</a>( )</code>
+
+			<div class="description short">
+				<p>Get response headers</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Get response headers</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-Gravatar.Response.html#$headers">Gravatar\Response::<var>$headers</var></a></code>
 					</div>
 
 
@@ -242,27 +270,52 @@
 		<div class="panel panel-default">
             <div class="panel-heading"><h2>Properties summary</h2></div>
 			<table class="summary table table-bordered table-striped properties" id="properties">
-		<tr data-order="uri" id="$uri">
+		<tr data-order="headers" id="$headers">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-Gravatar.Response.html#17-22" title="Go to source code"><var>$headers</var></a>
+
+				<div class="description short">
+					<p>Response headers</p>
+				</div>
+
+				<div class="description detailed hidden">
+					<p>Response headers</p>
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$headers" class="anchor">#</a>
+					<code>[]</code>
+				</div>
+			</td>
+		</tr>
+		<tr data-order="body" id="$body">
 			<td class="attributes"><code>
 				protected  
 				string
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-Gravatar.Uri.html#17-22" title="Go to source code"><var>$uri</var></a>
+					<a href="source-class-Gravatar.Response.html#24-29" title="Go to source code"><var>$body</var></a>
 
 				<div class="description short">
-					<p>URI</p>
+					<p>Whole response body</p>
 				</div>
 
 				<div class="description detailed hidden">
-					<p>URI</p>
+					<p>Whole response body</p>
 
 				</div>
 			</td>
 			<td class="value">
 				<div>
-					<a href="#$uri" class="anchor">#</a>
+					<a href="#$body" class="anchor">#</a>
 					<code><span class="php-quote">&quot;&quot;</span></code>
 				</div>
 			</td>
