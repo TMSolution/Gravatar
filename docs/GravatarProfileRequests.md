@@ -85,4 +85,4 @@ Optionally you can request for JSONP with specified callback
     );
 ```
 
-**[Visit gravatar.com for more details about profile data requests](http://en.gravatar.com/site/implement/profiles/)**.
+**[Visit gravatar.com for more details about profile data requests](http://en.gravatar.com/site/implement/profiles/)**
