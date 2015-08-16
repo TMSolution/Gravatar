@@ -9,7 +9,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     
     $profileData = (string) new Response(
         new ProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
@@ -20,7 +20,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     
     $profileData = (string) new Response(
         new XmlProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
@@ -31,7 +31,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     
     $profileData = (string) new Response(
         new VcfProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
@@ -42,7 +42,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     
     $profileData = (string) new Response(
         new QrProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
@@ -50,8 +50,9 @@ Optionally you can request for QR image with specified size
 ```php
     $profileData = (string) new Response(
         new QrProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
-        ), 250
+            new Account('krzysiekpiasecki@gmail.com'),
+            250
+        )
     );
 ```
 
@@ -62,7 +63,7 @@ Optionally you can request for QR image with specified size
     
     $profileData = (string) new Response(
         new JsonProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
+            new Account('krzysiekpiasecki@gmail.com')
         )
     );
 ```
@@ -70,8 +71,9 @@ Optionally you can request for JSONP with specified callback
 ```php
     $profileData = (string) new Response(
         new JsonProfileRequest(
-            new Account('krzysiekpiasecki@gmail.com)
-        ), "showProfile"
+            new Account('krzysiekpiasecki@gmail.com'),
+            "showProfile"
+        )
     );
 ```
 
