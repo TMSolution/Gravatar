@@ -55,6 +55,14 @@ Optionally you can request for QR image with specified size
         )
     );
 ```
+You can also request for QR image using IMG tag
+```php
+    $qr = \sprintf("<img src=\"%s\" />",
+        new QrProfileRequest(
+            new Account('krzysiekpiasecki@gmail.com')
+        )
+    );
+```
 
 ### Request for JSON profile data
 
