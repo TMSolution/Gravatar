@@ -14,7 +14,7 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
     );
     
     $profile = (string) new Response(
-        new ProfileRequest(
+        new ArrayRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );    
