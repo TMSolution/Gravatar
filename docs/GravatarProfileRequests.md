@@ -2,7 +2,7 @@
 
 Requesting for profile data is a similar process to requesting images. You can request for profile data in diffrent formats, but implementation is always the same - composition of the requested response.
 
-### Request for profile data as a serialized PHP string
+### Serialized PHP array
 
 ```php
     namespace Gravatar;
@@ -14,7 +14,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     );
 ```
 
-### Request for XML profile data
+### XML profile data
 ```php
     namespace Gravatar;
     
@@ -25,7 +25,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     );
 ```
 
-### Request for VCF profile data
+### VCF profile data
 ```php
     namespace Gravatar;
     
@@ -36,7 +36,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     );
 ```
 
-### Request for QR profile data
+### QR profile data
 ```php
     namespace Gravatar;
     
@@ -64,7 +64,7 @@ You can also request for QR image using IMG tag
     );
 ```
 
-### Request for JSON profile data
+### JSON profile data
 
 ```php
     namespace Gravatar;
