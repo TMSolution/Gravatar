@@ -8,7 +8,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     namespace Gravatar;
     
     $profileData = (string) new Response(
-        new ProfileRequest(
+        new ArrayRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
@@ -19,7 +19,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     namespace Gravatar;
     
     $profileData = (string) new Response(
-        new XmlProfileRequest(
+        new XmlRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
@@ -30,7 +30,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     namespace Gravatar;
     
     $profileData = (string) new Response(
-        new VcfProfileRequest(
+        new VcfRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
@@ -41,7 +41,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     namespace Gravatar;
     
     $profileData = (string) new Response(
-        new QrProfileRequest(
+        new QrRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
@@ -49,7 +49,7 @@ Requesting for profile data is a similar process to requesting images. You can r
 Optionally you can request for QR image with specified size
 ```php
     $profileData = (string) new Response(
-        new QrProfileRequest(
+        new QrRequest(
             new Account('krzysiekpiasecki@gmail.com'),
             250
         )
@@ -58,7 +58,7 @@ Optionally you can request for QR image with specified size
 You can also request for QR image using IMG tag
 ```php
     $qr = \sprintf("<img src=\"%s\" />",
-        new QrProfileRequest(
+        new QrRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
@@ -70,7 +70,7 @@ You can also request for QR image using IMG tag
     namespace Gravatar;
     
     $profileData = (string) new Response(
-        new JsonProfileRequest(
+        new JsonRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
     );
@@ -78,7 +78,7 @@ You can also request for QR image using IMG tag
 Optionally you can request for JSONP with specified callback
 ```php
     $profileData = (string) new Response(
-        new JsonProfileRequest(
+        new JsonRequest(
             new Account('krzysiekpiasecki@gmail.com'),
             "showProfile"
         )
