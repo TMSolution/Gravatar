@@ -13,11 +13,13 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
       )
     );
     
-    $profile = (string) new Response(
-        new ArrayRequest(
-            new Account('krzysiekpiasecki@gmail.com')
+    $profile = new Profile(
+        new Response(
+            new Request(
+                new Account('krzysiekpiasecki@gmail.com')
+            )
         )
-    );    
+    );  
 ```
 
 ## Class design
