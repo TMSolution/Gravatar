@@ -40,7 +40,7 @@ class ImageRequest extends AbstractRequest
      */
     public function getPath()
     {
-        return "avatar/" . parent::getPath();
+        return \sprintf("avatar/%s", parent::getPath());
     }
     
     /**

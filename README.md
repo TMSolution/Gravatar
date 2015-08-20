@@ -1,19 +1,33 @@
 #Gravatar
 
-Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized avatar
+Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized avatar and profile data
+
+## Example of usage
 
 ```php
     namespace Gravatar;
 
-    $response = new Response(
-        new ProfileRequest(
+    $avatar = \sprintf("<img src=\"%s\" />",
+      new ImageRequest(
+        new Account('krzysiekpiasecki@gmail.com')
+      )
+    );
+    
+    $profile = (string) new Response(
+        new ArrayRequest(
             new Account('krzysiekpiasecki@gmail.com')
         )
-    );
-
+    );    
 ```
 
+## Class design
+
+- Fully immutable
+- Declarative over imperative
+- Avoiding static methods, properties, utils, consts, null references
+
 ## Resources
+- [Examples](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/Examples.md)
 - [Application programming interface](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/api/API-documentation.zip)
 - [UML Class Diagram](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/ClassDiagram.md)
 - [Software metrics](https://github.com/krzysiekpiasecki/Gravatar/blob/master/docs/SoftwareMetrics.md)

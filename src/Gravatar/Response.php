@@ -15,19 +15,19 @@ class Response
 {
 
     /**
-     * Response headers
-     * 
-     * @var array Response headers
+     * Http response headers
+     *
+     * @var array Http response headers
      */
     protected $headers = [];
-    
+
     /**
      * Whole response body
-     * 
+     *
      * @var string Whole response body
      */
     protected $body = "";
-    
+
     /**
      * Response from gravatar.com
      *
@@ -36,7 +36,7 @@ class Response
     public function __construct(AbstractRequest $request)
     {
         $this->body = \file_get_contents($request->getUri());
-        $this->headers = $http_response_header;
+        $this->headers = $this->parseHttpHeaders($http_response_header);
     }
 
     /**
@@ -58,7 +58,7 @@ class Response
     {
         return $this->body;
     }
-    
+
     /**
      * Get response headers
      *
@@ -67,6 +67,39 @@ class Response
     public function getHeaders()
     {
         return $this->headers;
+    }
+
+    /**
+     * Get http response code
+     *
+     * @return int Http response code
+     */
+    public function getResponseCode()
+    {
+        return $this->headers['Response-code'];
+    }
+
+    /**
+     * Parse http headers into a headers map
+     *
+     * @param array $headers
+     * @return array Http headers map
+     */
+    protected function parseHttpHeaders(array $headers)
+    {
+        $parsedHeaders = [];
+        foreach ($headers as $field => $value) {
+            $t = \explode(':', $value, 2);
+            if (isset($t[1]) == true) {
+                $parsedHeaders[\trim($t[0])] = \trim($t[1]);
+            } else {
+                $parsedHeaders[] = $value;
+                if (\preg_match("#HTTP/[0-9\.]+\s+([0-9]+)#", $value, $out)) {
+                    $parsedHeaders['Response-code'] = \intval($out[1]);
+                }
+            }
+        }
+        return $parsedHeaders;
     }
 
 }

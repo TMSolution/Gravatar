@@ -7,22 +7,22 @@
 namespace Gravatar;
 
 /**
- * Request to the gravatar.com for the php profile data
+ * Request to the gravatar.com for the vcf profile data
  *
- * @link http://en.gravatar.com/site/implement/profiles/php Gravatar PHP Profile Data
+ * @link http://en.gravatar.com/site/implement/profiles/vcf Gravatar VCF Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class ProfileRequest extends AbstractRequest
+class VcfRequest extends AbstractRequest
 {
 
     /**
-     * Request to the gravatar.com for the php profile data
-     *
+     * Request to the gravatar.com for the vcf profile data
+     * 
      * @param Account $account Gravatar account
      */
     public function __construct(Account $account)
     {
-        parent::__construct($account, "php");
+        parent::__construct($account, "vcf");
     }
 
 }
