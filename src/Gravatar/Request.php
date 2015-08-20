@@ -7,12 +7,12 @@
 namespace Gravatar;
 
 /**
- * Request to the gravatar.com for the php profile data
+ * Request to the gravatar.com for the serialized array profile data
  *
  * @link http://en.gravatar.com/site/implement/profiles/php Gravatar PHP Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class ArrayRequest extends AbstractRequest
+class Request extends AbstractRequest
 {
 
     /**
