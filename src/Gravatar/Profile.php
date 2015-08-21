@@ -18,7 +18,7 @@ class Profile implements ProfileInterface
     /**
      * Response data
      * 
-     * @var array 
+     * @var array
      */
     protected $responseData = [
         "id" => "",
@@ -29,7 +29,7 @@ class Profile implements ProfileInterface
         "thumbnailUrl" => "",
         "aboutMe" => "",
         "currentLocation" => "",
-        "displayName" => "",        
+        "displayName" => "",
         "emails" => [],
         "name" => [
             "familyName" => "",
@@ -43,65 +43,114 @@ class Profile implements ProfileInterface
         "profileBackground" => [],
         "urls" => [],
     ];
-    
+
     /**
      * Gravatar profile
      * 
-     * @param Response $response Response from Gravatar profile
+     * @param Response $response Response from gravatar.com
      */
     public function __construct(Response $response)
     {
         $this->responseData = \array_merge(
-            $this->responseData,
-            \unserialize($response->getBody())["entry"][0]
+                $this->responseData, \unserialize($response->getBody())["entry"][0]
         );
     }
 
+    /**
+     * Get profile id
+     * 
+     * @return string Profile id
+     */
     public function getId()
     {
         return $this->responseData["id"];
     }
 
+    /**
+     * Get profile hash
+     * 
+     * @return string Hash
+     */
     public function getHash()
     {
         return $this->responseData["hash"];
     }
 
+    /**
+     * Get requested hash
+     * 
+     * @return string Request hash
+     */
     public function getRequestHash()
     {
         return $this->responseData["requestHash"];
     }
 
+    /**
+     * Get profile URL
+     * 
+     * @return string Profile URL
+     */
     public function getProfileUrl()
     {
         return $this->responseData["profileUrl"];
     }
 
+    /**
+     * Get preffered name
+     * 
+     * @return string Preferred user name
+     */
     public function getPreferredUserName()
     {
         return $this->responseData["preferredUsername"];
     }
 
+    /**
+     * Get thumbnail URL
+     * 
+     * @return string Thumbnail Url
+     */
     public function getThumbnailUrl()
     {
         return $this->responseData["thumbnailUrl"];
     }
 
-    public function getAboutMe()
+    /**
+     * Get info about profile user
+     * 
+     * @return string Info about profile user
+     */
+    public function getAbout()
     {
         return $this->responseData["aboutMe"];
     }
 
+    /**
+     * Get location
+     * 
+     * @return string User location
+     */    
     public function getCurrentLocation()
     {
         return $this->responseData["currentLocation"];
     }
 
+    /**
+     * Get display name
+     * 
+     * @return string User display name
+     */    
     public function getDisplayName()
     {
         return $this->responseData["displayName"];
     }
 
+    /**
+     * Get primary email
+     * 
+     * @return string User primary email
+     */
     public function getPrimaryEmail()
     {
         foreach ($this->responseData["emails"] as $email) {
@@ -112,6 +161,11 @@ class Profile implements ProfileInterface
         return "";
     }
 
+    /**
+     * Get emails
+     * 
+     * @return \Generator User emails
+     */
     public function getEmails()
     {
         foreach ($this->responseData["emails"] as $index => $email) {
@@ -119,21 +173,41 @@ class Profile implements ProfileInterface
         }
     }
 
+    /**
+     * Get family name
+     * 
+     * @return string User family name
+     */    
     public function getFamilyName()
     {
         return $this->responseData["name"]["familyName"];
     }
 
+    /**
+     * Get formatted name
+     * 
+     * @return string User formatted name
+     */    
     public function getFormattedName()
     {
         return $this->responseData["name"]["formatted"];
     }
 
+    /**
+     * Get given name
+     * 
+     * @return string User given name
+     */
     public function getGivenName()
     {
         return $this->responseData["name"]["givenName"];
     }
 
+    /**
+     * Get ims
+     * 
+     * @return \Generator User ims
+     */    
     public function getIms()
     {
         foreach ($this->responseData["ims"] as $im) {
@@ -141,6 +215,11 @@ class Profile implements ProfileInterface
         }
     }
 
+    /**
+     * Get currencies
+     * 
+     * @return \Generator User currencies
+     */
     public function getCurrencies()
     {
         foreach ($this->responseData["currency"] as $currency) {
@@ -148,7 +227,11 @@ class Profile implements ProfileInterface
         }
     }
 
-    
+    /**
+     * Get photos
+     * 
+     * @return \Generator User photos
+     */
     public function getPhotos()
     {
         foreach ($this->responseData["photos"] as $index => $photo) {
@@ -156,6 +239,11 @@ class Profile implements ProfileInterface
         }
     }
 
+    /**
+     * Get thumbnail photo
+     * 
+     * @return string Profile thumbnail photo
+     */
     public function getThumbnailPhoto()
     {
         foreach ($this->responseData["photos"] as $photo) {
@@ -165,21 +253,36 @@ class Profile implements ProfileInterface
         }
         return "";
     }
-    
+
+    /**
+     * Get phone numbers
+     * 
+     * @return \Generator User phone numbers
+     */
     public function getPhoneNumbers()
     {
         foreach ($this->responseData["phoneNumbers"] as $phone) {
             yield $phone["type"] => $phone["value"];
         }
     }
-    
-    public function getProfileBackground()
+
+    /**
+     * Get backgrounds
+     * 
+     * @var \Generator Profile backgrounds
+     */
+    public function getProfileBackgrounds()
     {
         foreach ($this->responseData["profileBackground"] as $type => $background) {
             yield $type => $background;
         }
     }
 
+    /**
+     * Get URL's
+     * 
+     * @return \Generator User URL's
+     */
     public function getUrls()
     {
         foreach ($this->responseData["urls"] as $im) {

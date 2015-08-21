@@ -1,4 +1,5 @@
 <?php
+
 /*
  * For the full copyright and license information, please view the LICENSE file
  * that was distributed with this source code.
@@ -13,110 +14,151 @@ namespace Gravatar;
  */
 interface ProfileInterface
 {
+
     /**
+     * Get profile id
+     * 
      * @return string Profile id
      */
     public function getId();
-    
+
     /**
-     * @return string Response hash
+     * Get profile hash
+     * 
+     * @return string Hash
      */
     public function getHash();
-    
+
     /**
+     * Get requested hash
+     * 
      * @return string Request hash
      */
     public function getRequestHash();
-    
+
     /**
+     * Get profile URL
+     * 
      * @return string Profile URL
      */
     public function getProfileUrl();
-    
+
     /**
+     * Get preffered name
+     * 
      * @return string Preferred user name
      */
     public function getPreferredUserName();
-    
+
     /**
+     * Get thumbnail URL
+     * 
      * @return string Thumbnail Url
      */
     public function getThumbnailUrl();
-    
+
     /**
-     * @return array Collection of photos
+     * Get photos
+     * 
+     * @return \Generator User photos
      */
     public function getPhotos();
 
     /**
-     * @return string
+     * Get thumbnail photo
+     * 
+     * @return string Profile thumbnail photo
      */
     public function getThumbnailPhoto();
-    
-    
+
     /**
-     * @var array
+     * Get backgrounds
+     * 
+     * @var \Generator Profile backgrounds
      */
-    public function getProfileBackground();
-    
+    public function getProfileBackgrounds();
+
     /**
-     * @return string
+     * Get given name
+     * 
+     * @return string User given name
      */
     public function getGivenName();
 
     /**
-     * @return string
-     */    
+     * Get family name
+     * 
+     * @return string User family name
+     */
     public function getFamilyName();
-    
+
     /**
-     * @return string
-     */    
+     * Get formatted name
+     * 
+     * @return string User formatted name
+     */
     public function getFormattedName();
-    
+
     /**
-     * @return string
-     */    
+     * Get display name
+     * 
+     * @return string User display name
+     */
     public function getDisplayName();
-    
+
     /**
-     * @return string
-     */    
-    public function getAboutMe();
-    
+     * Get info about user
+     * 
+     * @return string Info about user
+     */
+    public function getAbout();
+
     /**
-     * @return string
-     */    
+     * Get location
+     * 
+     * @return string User location
+     */
     public function getCurrentLocation();
 
     /**
-     * @return string
+     * Get primary email
+     * 
+     * @return string User primary email
      */
     public function getPrimaryEmail();
 
     /**
-     * @return \Generator
+     * Get emails
+     * 
+     * @return \Generator User emails
      */
     public function getEmails();
 
     /**
-     * @return \Generator
-     */    
+     * Get ims
+     * 
+     * @return \Generator User ims
+     */
     public function getIms();
-    
+
     /**
-     * @return \Generator
+     * Get URL's
+     * 
+     * @return \Generator User URL's
      */
     public function getUrls();
-    
+
     /**
-     * @return \Generator
+     * Get phone numbers
+     * 
+     * @return \Generator User phone numbers
      */
     public function getPhoneNumbers();
-    
+
     /**
-     * @return \Generator
+     * Get currencies
+     * 
+     * @return \Generator User currencies
      */
     public function getCurrencies();
-    
 }
