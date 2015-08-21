@@ -8,9 +8,9 @@ Request to the [gravatar.com](http://www.gravatar.com) for a globally recognized
     namespace Gravatar;
 
     $avatar = \sprintf("<img src=\"%s\" />",
-      new ImageRequest(
-        new Account('krzysiekpiasecki@gmail.com')
-      )
+        new ImageRequest(
+            new Account('krzysiekpiasecki@gmail.com')
+        )
     );
     
     $profile = new Profile(
