@@ -1,6 +1,6 @@
 # Profile
 
-
+To get a profile data you must declare the response for the request with serialized data.
 
 ```php
   namespace Gravatar;
@@ -12,5 +12,6 @@
           )
       )
   );
-
 ```
+
+After declaring profile object use profile interface to get the data.
