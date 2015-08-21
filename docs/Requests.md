@@ -1,8 +1,8 @@
 # Requests to the gravatar.com
 
-##Request for profile data
+##Request for the profile data
 
-Requesting for profile data is a similar process to requesting images. You can request for profile data in diffrent formats, but implementation is always the same - composition of the response.
+You can request for profile data in diffrent formats declaring a request object
 
 #### Request for serialized profile data
 
@@ -18,7 +18,7 @@ Requesting for profile data is a similar process to requesting images. You can r
 ```php
     namespace Gravatar;
     
-    $request = new XmlRequest(
+    new XmlRequest(
         new Account('joe.doe@example.com')
     );
 ```
@@ -32,7 +32,7 @@ Requesting for profile data is a similar process to requesting images. You can r
     );
 ```
 
-### QR profile data
+### Request for QR profile data
 ```php
     namespace Gravatar;
     
@@ -42,7 +42,7 @@ Requesting for profile data is a similar process to requesting images. You can r
 
     new QrRequest(
         new Account('joe.doe@example.com'),
-        250 // size of qr image
+        250 // Custom size of qr image
     );
 ```
 
@@ -66,7 +66,7 @@ Request for QR image using IMG tag
 
     new JsonRequest(
         new Account('joe.doe@example.com'),
-        "alert" // callback name
+        "alert" // Callback name
     );
 ```
 
