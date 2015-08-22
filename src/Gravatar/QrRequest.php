@@ -9,7 +9,6 @@ namespace Gravatar;
 /**
  * Request to the gravatar.com for the QR profile data
  *
- * @link http://en.gravatar.com/site/implement/profiles/qr Gravatar QR Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class QrRequest extends AbstractRequest

@@ -9,26 +9,26 @@ namespace Gravatar;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Test for QrProfileRequest class
+ * Test for QrRequest class
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class QrProfileRequestTest extends PHPUnit_Framework_TestCase
+class QrRequestTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers Gravatar\QrProfileRequest::__construct
+     * @covers Gravatar\QrRequest::__construct
      */
     public function test__construct()
     {
-        $request = new QrProfileRequest(new Account("krzysiekpiasecki@gmail.com"));
+        $request = new QrRequest(new Account("joe.doe@example.com"));
         $this->assertSame(
-            "https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.qr",
+            "https://gravatar.com/f4596eff172e0f64aceb4c6fa26e0cfe.qr",
             $request->__toString()
         );
-        $request2 = new QrProfileRequest(new Account("krzysiekpiasecki@gmail.com"), 200);
+        $request2 = new QrRequest(new Account("joe.doe@example.com"), 200);
         $this->assertSame(
-            "https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.qr?size=200",
+            "https://gravatar.com/f4596eff172e0f64aceb4c6fa26e0cfe.qr?size=200",
             $request2->__toString()
         );
     }
