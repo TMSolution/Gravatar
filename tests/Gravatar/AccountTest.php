@@ -11,7 +11,7 @@ use ReflectionClass;
 /**
  * Test for Account class.
  *
- * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
+ * @author Krzysztof Piasecki <joe.doe@example.com>
  */
 class AccountTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,11 +20,11 @@ class AccountTest extends \PHPUnit_Framework_TestCase
      */
     public function test__construct()
     {
-        $account = new Account("krzysiekpiasecki@gmail.com");
+        $account = new Account("joe.doe@example.com");
         $class = new ReflectionClass($account);
         $property = $class->getProperty("email");
         $property->setAccessible(true);
-        $this->assertSame("krzysiekpiasecki@gmail.com", $property->getValue($account));
+        $this->assertSame("joe.doe@example.com", $property->getValue($account));
     }
 
     /**
@@ -32,8 +32,8 @@ class AccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testGetEmail()
     {
-        $account = new Account("krzysiekpiasecki@gmail.com");
-        $this->assertSame("krzysiekpiasecki@gmail.com", $account->getEmail());
+        $account = new Account("joe.doe@example.com");
+        $this->assertSame("joe.doe@example.com", $account->getEmail());
     }
 
     /**
@@ -41,8 +41,8 @@ class AccountTest extends \PHPUnit_Framework_TestCase
      */
     public function test__toString()
     {
-        $account = new Account("krzysiekpiasecki@gmail.com");
-        $this->assertSame("krzysiekpiasecki@gmail.com", $account->__toString());
+        $account = new Account("joe.doe@example.com");
+        $this->assertSame("joe.doe@example.com", $account->__toString());
     }
 
     /**
@@ -50,7 +50,7 @@ class AccountTest extends \PHPUnit_Framework_TestCase
      */
     public function testEquals()
     {
-        $account = new Account("krzysiekpiasecki@gmail.com");
+        $account = new Account("joe.doe@example.com");
         $account2 = clone $account;
         $account3 = new Account("krzysztofpiasecki@gmail.com");
         $this->assertTrue($account->equals($account2));

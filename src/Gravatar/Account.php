@@ -9,7 +9,6 @@ namespace Gravatar;
 /**
  * Gravatar account
  *
- * @link http://en.gravatar.com/support/what-is-gravatar About Gravatar
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Account
@@ -43,10 +42,10 @@ class Account
     }
 
     /**
-     * Ensure that two Accounts are equal
+     * Compares two accounts
      *
      * @param Account $account Other account
-     * @return bool if equal return true otherwise false
+     * @return bool true if this account is the same as the other account; false otherwise.
      */
     public function equals(Account $account)
     {
@@ -54,9 +53,9 @@ class Account
     }
 
     /**
-     * Get email
+     * Get account email
      *
-     * @return string Email
+     * @return string Account email
      */
     public function getEmail()
     {
