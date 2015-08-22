@@ -20,7 +20,7 @@ class HashTest extends PHPUnit_Framework_TestCase
      */
     public function test__construct()
     {
-        $account = new Account("krzysiekpiasecki@gmail.com");
+        $account = new Account("joe.doe@example.com");
         $hash = new Hash($account);
         $class = new ReflectionClass($hash);
         $property = $class->getProperty("account");
@@ -36,9 +36,9 @@ class HashTest extends PHPUnit_Framework_TestCase
      */
     public function test__toString()
     {
-        $hash = new Hash(new Account("krzysiekpiasecki@gmail.com"));
+        $hash = new Hash(new Account("joe.doe@example.com"));
         $this->assertSame(
-            "42ee56a548ee6259f9e44a66d1c3aa61",
+            "f4596eff172e0f64aceb4c6fa26e0cfe",
             $hash->__toString()
         );
     }
@@ -48,9 +48,9 @@ class HashTest extends PHPUnit_Framework_TestCase
      */
     public function testEquals()            
     {
-        $hash = new Hash(new Account("krzysiekpiasecki@gmail.com"));
-        $hash2 = new Hash(new Account("krzysiekpiasecki@gmail.com"));
-        $hash3 = new Hash(new Account("krzysztofpiasecki@gmail.com"));
+        $hash = new Hash(new Account("joe.doe@example.com"));
+        $hash2 = new Hash(new Account("joe.doe@example.com"));
+        $hash3 = new Hash(new Account("joedoe@example.com"));
         $this->assertTrue($hash->equals($hash2));
         $this->assertTrue($hash2->equals($hash));
         $this->assertFalse($hash3->equals($hash));

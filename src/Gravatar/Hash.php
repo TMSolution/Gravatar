@@ -9,7 +9,6 @@ namespace Gravatar;
 /**
  * Gravatar hash
  *
- * @link http://en.gravatar.com/site/implement/hash Gravatar hash
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class Hash
@@ -39,14 +38,14 @@ class Hash
      */
     public function __toString()
     {
-        return \md5(\trim(\mb_strtolower($this->account->getEmail())));
+        return \md5(\trim(\mb_strtolower($this->account)));
     }
 
     /**
-     * Ensure that two Hashes are equal
+     * Compares two hashes.
      *
-     * @param Hash $hash Other hash
-     * @return bool if equal return true otherwise false
+     * @param Hash $hash Other $hash
+     * @return bool true if this hash is the same as the other hash; false otherwise.
      */
     public function equals(Hash $hash)
     {
