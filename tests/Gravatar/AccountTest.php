@@ -11,7 +11,7 @@ use ReflectionClass;
 /**
  * Test for Account class.
  *
- * @author Krzysztof Piasecki <joe.doe@example.com>
+ * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class AccountTest extends \PHPUnit_Framework_TestCase
 {
