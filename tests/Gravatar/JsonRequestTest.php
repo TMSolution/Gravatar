@@ -1,4 +1,5 @@
 <?php
+
 /*
  * For the full copyright and license information, please view the LICENSE file
  * that was distributed with this source code.
@@ -9,7 +10,7 @@ namespace Gravatar;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Test for JsonProfileRequest class
+ * Test for JsonRequest class
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
@@ -17,18 +18,18 @@ class JsonProfileRequestTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers Gravatar\JsonProfileRequest::__construct
+     * @covers Gravatar\JsonRequest::__construct
      */
     public function test__construct()
     {
-        $request = new JsonProfileRequest(new Account("krzysiekpiasecki@gmail.com"));
+        $request = new JsonRequest(new Account("joe.doe@example.com"));
         $this->assertSame(
-            "https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.json", 
-             $request->__toString()
+            "https://gravatar.com/f4596eff172e0f64aceb4c6fa26e0cfe.json",
+            $request->__toString()
         );
-        $request2 = new JsonProfileRequest(new Account("krzysiekpiasecki@gmail.com"), "alert");
+        $request2 = new JsonRequest(new Account("joe.doe@example.com"), "alert");
         $this->assertSame(
-            "https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.json?callback=alert",
+            "https://gravatar.com/f4596eff172e0f64aceb4c6fa26e0cfe.json?callback=alert",
             $request2->__toString()
         );
     }

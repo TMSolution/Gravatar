@@ -9,7 +9,6 @@ namespace Gravatar;
 /**
  * Request to the gravatar.com for the JSON profile data
  *
- * @link http://en.gravatar.com/site/implement/profiles/json Gravatar JSON Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class JsonRequest extends AbstractRequest
