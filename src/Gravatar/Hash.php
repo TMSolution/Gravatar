@@ -42,7 +42,7 @@ class Hash
     }
 
     /**
-     * Compares two hashes.
+     * Compares two hashes
      *
      * @param Hash $hash Other $hash
      * @return bool true if this hash is the same as the other hash; false otherwise.
@@ -53,7 +53,7 @@ class Hash
     }
     
     /**
-     * Get account hash code.
+     * Get account hash code
      * 
      * @return string Account hash code
      */
