@@ -56,4 +56,16 @@ class HashTest extends PHPUnit_Framework_TestCase
         $this->assertFalse($hash3->equals($hash));
     }
 
+    /**
+     * @covers Gravatar\Hash::getHashCode
+     */
+    public function testGetHashCode()
+    {
+        $hash = new Hash(new Account("joe.doe@example.com"));
+        $this->assertSame(
+            "f4596eff172e0f64aceb4c6fa26e0cfe",
+            $hash->getHashCode()
+        );
+    }
+    
 }

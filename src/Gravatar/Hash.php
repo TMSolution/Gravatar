@@ -51,5 +51,15 @@ class Hash
     {
         return $this == $hash;
     }
+    
+    /**
+     * Get account hash code.
+     * 
+     * @return string Account hash code
+     */
+    public function getHashCode()
+    {
+        return (string) $this;
+    }
 
 }
