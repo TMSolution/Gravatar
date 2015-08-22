@@ -9,21 +9,21 @@ namespace Gravatar;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Test for ProfileRequest class
+ * Test for Request class
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class ProfileRequestTest extends PHPUnit_Framework_TestCase
+class RequestTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers Gravatar\ProfileRequest::__construct
+     * @covers Gravatar\Request::__construct
      */
     public function test__construct()
     {
-        $request = new ProfileRequest(new Account("krzysiekpiasecki@gmail.com"));
+        $request = new Request(new Account("joe.doe@example.com"));
         $this->assertSame(
-            "https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.php",
+            "https://gravatar.com/f4596eff172e0f64aceb4c6fa26e0cfe.php",
             $request->__toString()
         );
     }
