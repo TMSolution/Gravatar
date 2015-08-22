@@ -9,21 +9,21 @@ namespace Gravatar;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Test for VcfProfileRequest
+ * Test for VcfRequest
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class VcfProfileRequestTest extends PHPUnit_Framework_TestCase
+class VcfRequestTest extends PHPUnit_Framework_TestCase
 {
 
     /**
-     * @covers Gravatar\VcfProfileRequest::__construct
+     * @covers Gravatar\VcfRequest::__construct
      */
     public function test__construct()
     {
-        $request = new VcfProfileRequest(new Account("krzysiekpiasecki@gmail.com"));
+        $request = new VcfRequest(new Account("joe.doe@example.com"));
         $this->assertSame(
-            "https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.vcf",
+            "https://gravatar.com/f4596eff172e0f64aceb4c6fa26e0cfe.vcf",
             $request->__toString()
         );
     }

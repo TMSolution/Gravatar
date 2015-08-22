@@ -9,7 +9,6 @@ namespace Gravatar;
 /**
  * Request to the gravatar.com for the vcf profile data
  *
- * @link http://en.gravatar.com/site/implement/profiles/vcf Gravatar VCF Profile Data
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
 class VcfRequest extends AbstractRequest
