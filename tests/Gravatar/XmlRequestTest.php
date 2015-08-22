@@ -9,21 +9,23 @@ namespace Gravatar;
 use PHPUnit_Framework_TestCase;
 
 /**
- * Test for XmlProfileRequest
+ * Test for XmlRequest
  *
  * @author Krzysztof Piasecki <krzysiekpiasecki@gmail.com>
  */
-class XmlProfileRequestTest extends PHPUnit_Framework_TestCase
+class XmlRequestTest extends PHPUnit_Framework_TestCase
 {
+
     /**
-     * @covers Gravatar\XmlProfileRequest::__construct
+     * @covers Gravatar\XmlRequest::__construct
      */
     public function test__construct()
     {
-        $request = new XmlProfileRequest(new Account("krzysiekpiasecki@gmail.com"));
+        $request = new XmlRequest(new Account("joe.doe@example.com"));
         $this->assertSame(
-            "https://gravatar.com/42ee56a548ee6259f9e44a66d1c3aa61.xml",
+            "https://gravatar.com/f4596eff172e0f64aceb4c6fa26e0cfe.xml",
             $request->__toString()
         );
     }
+
 }
