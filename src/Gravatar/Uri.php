@@ -42,10 +42,10 @@ class Uri
     }
 
     /**
-     * Ensure that both URI's are equal
-     * 
+     * Compares two URI's
+     *
      * @param Uri $uri Other URI
-     * @return bool if equal return true otherwise false
+     * @return bool true if this URI is the same as the other URI; false otherwise.
      */
     public function equals(Uri $uri)
     {
